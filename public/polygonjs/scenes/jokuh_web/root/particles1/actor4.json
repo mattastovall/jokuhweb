@@ -1,0 +1,1615 @@
+{
+	"type": "actor",
+	"nodes": {
+		"onKey2": {
+			"type": "onKey",
+			"params": {
+				"keyCodes": "*"
+			}
+		},
+		"noiseSimplex1": {
+			"type": "noiseSimplex",
+			"params": {
+				"position": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"amp": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"freq": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": [1.3, 4, 1.4]
+				},
+				"offset": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"octaves": {
+					"type": "integer",
+					"default_value": 3,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"ampMult": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"freqMult": {
+					"type": "float",
+					"default_value": 2,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"seed": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"connection_points": {
+				"in": [
+					{
+						"name": "position",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "amp",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "freq",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "offset",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "octaves",
+						"type": "int",
+						"isArray": false
+					},
+					{
+						"name": "ampMult",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "freqMult",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "seed",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "noise",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"sphere1": {
+			"type": "sphere",
+			"params": {
+				"center": {
+					"overriden_options": {}
+				},
+				"radius": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "center",
+					"node": "position",
+					"output": "vec3"
+				}
+			]
+		},
+		"onTick1": {
+			"type": "onTick"
+		},
+		"sin1": {
+			"type": "sin",
+			"params": {
+				"angle": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "angle",
+					"node": "onTick1",
+					"output": "time"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "angle",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "sin",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"sin2": {
+			"type": "sin",
+			"params": {
+				"angle": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "angle",
+					"node": "mult1",
+					"output": "product"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "angle",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "sin",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"mult1": {
+			"type": "mult",
+			"params": {
+				"mult0": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult1": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 3
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "mult0",
+					"node": "sin1",
+					"output": "sin"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "mult0",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "mult1",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "product",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"mult2": {
+			"type": "mult",
+			"params": {
+				"mult0": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.65
+				},
+				"mult1": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult2": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				null,
+				{
+					"index": 1,
+					"inputName": "mult1",
+					"node": "mult1",
+					"output": "product"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "mult0",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "mult1",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "mult2",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "product",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"position": {
+			"type": "floatToVec3",
+			"params": {
+				"x": {
+					"raw_input": 1,
+					"overriden_options": {}
+				},
+				"y": {
+					"overriden_options": {}
+				},
+				"z": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "x",
+					"node": "add1",
+					"output": "sum"
+				},
+				{
+					"index": 1,
+					"inputName": "y",
+					"node": "add2",
+					"output": "sum"
+				}
+			]
+		},
+		"setParam2": {
+			"type": "setParam",
+			"params": {
+				"type": 6,
+				"Param": {
+					"type": "param_path",
+					"default_value": "",
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": false,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": "../../particlesSystemGpu1/cursor"
+				},
+				"lerp": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"val": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 4,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "trigger",
+					"node": "setParam5",
+					"output": "trigger"
+				},
+				null,
+				null,
+				{
+					"index": 3,
+					"inputName": "val",
+					"node": "position",
+					"output": "vec3"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					},
+					{
+						"name": "Param",
+						"type": "Param",
+						"isArray": false
+					},
+					{
+						"name": "lerp",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "val",
+						"type": "Vector3",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"previousValue1": {
+			"type": "previousValue",
+			"params": {
+				"current": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 2,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "current",
+					"node": "position",
+					"output": "vec3"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "current",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "offset",
+						"type": "int",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "prev",
+						"type": "Vector3",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"multScalar1": {
+			"type": "multScalar",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "subtract1",
+					"output": "sub"
+				},
+				{
+					"index": 1,
+					"inputName": "mult",
+					"node": "onTick1",
+					"output": "time"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "mult",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "Vector3",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"subtract1": {
+			"type": "subtract",
+			"params": {
+				"sub0": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"sub1": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"sub2": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "sub0",
+					"node": "position",
+					"output": "vec3"
+				},
+				{
+					"index": 1,
+					"inputName": "sub1",
+					"node": "previousValue1",
+					"output": "prev"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "sub0",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "sub1",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "sub2",
+						"type": "Vector3",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "sub",
+						"type": "Vector3",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"setParam3": {
+			"type": "setParam",
+			"params": {
+				"type": 6,
+				"Param": {
+					"type": "param_path",
+					"default_value": "",
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": false,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": "../../particlesSystemGpu1/velocity"
+				},
+				"lerp": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"val": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 4,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "trigger",
+					"node": "setParam2",
+					"output": "trigger"
+				},
+				null,
+				null,
+				{
+					"index": 3,
+					"inputName": "val",
+					"node": "divide1",
+					"output": "divide"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					},
+					{
+						"name": "Param",
+						"type": "Param",
+						"isArray": false
+					},
+					{
+						"name": "lerp",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "val",
+						"type": "Vector3",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"divide1": {
+			"type": "divide",
+			"params": {
+				"div0": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"div1": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.5
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "div0",
+					"node": "multScalar1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "div0",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "div1",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "divide",
+						"type": "Vector3",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"setParam4": {
+			"type": "setParam",
+			"params": {
+				"type": 6,
+				"Param": {
+					"type": "param_path",
+					"default_value": "",
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": false,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": "/particles/particlesSystemGpu1/param3"
+				},
+				"lerp": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"val": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 4,
+			"connection_points": {
+				"in": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					},
+					{
+						"name": "Param",
+						"type": "Param",
+						"isArray": false
+					},
+					{
+						"name": "lerp",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "val",
+						"type": "Vector3",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"setParam5": {
+			"type": "setParam",
+			"params": {
+				"type": 6,
+				"Param": {
+					"type": "param_path",
+					"default_value": "",
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": false,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": "../../particlesSystemGpu1/velocity"
+				},
+				"lerp": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"val": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 4,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "trigger",
+					"node": "onKey2",
+					"output": "trigger"
+				},
+				null,
+				null,
+				{
+					"index": 3,
+					"inputName": "val",
+					"node": "multScalar1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					},
+					{
+						"name": "Param",
+						"type": "Param",
+						"isArray": false
+					},
+					{
+						"name": "lerp",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "val",
+						"type": "Vector3",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"noiseImproved1": {
+			"type": "noiseImproved",
+			"params": {
+				"position": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": [1, 1, 1]
+				},
+				"amp": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"freq": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": [3, 3, 3]
+				},
+				"offset": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"octaves": {
+					"type": "integer",
+					"default_value": 3,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"ampMult": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"freqMult": {
+					"type": "float",
+					"default_value": 2,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"connection_points": {
+				"in": [
+					{
+						"name": "position",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "amp",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "freq",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "offset",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "octaves",
+						"type": "int",
+						"isArray": false
+					},
+					{
+						"name": "ampMult",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "freqMult",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "noise",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"easing2": {
+			"type": "easing",
+			"params": {
+				"type": 1,
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "mult2",
+					"output": "product"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "out",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"onKeyup1": {
+			"type": "onKeyup",
+			"params": {
+				"keyCodes": "*"
+			}
+		},
+		"setParam6": {
+			"type": "setParam",
+			"params": {
+				"type": 6,
+				"Param": {
+					"type": "param_path",
+					"default_value": "",
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": false,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": "../../particlesSystemGpu1/velocity"
+				},
+				"lerp": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"val": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 4,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "trigger",
+					"node": "triggerDelay1",
+					"output": "trigger"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					},
+					{
+						"name": "Param",
+						"type": "Param",
+						"isArray": false
+					},
+					{
+						"name": "lerp",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "val",
+						"type": "Vector3",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"add1": {
+			"type": "add",
+			"params": {
+				"add0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add2": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "add0",
+					"node": "easing2",
+					"output": "out"
+				},
+				{
+					"index": 1,
+					"inputName": "add1",
+					"node": "noiseImproved1",
+					"output": "noise"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "add0",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "add1",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "add2",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "sum",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"triggerDelay1": {
+			"type": "triggerDelay",
+			"params": {
+				"delay": 30
+			},
+			"maxInputsCount": 2,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "trigger",
+					"node": "onKeyup1",
+					"output": "trigger"
+				}
+			]
+		},
+		"mult3": {
+			"type": "mult",
+			"params": {
+				"mult0": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult1": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 20
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "mult0",
+					"node": "noiseImproved1",
+					"output": "noise"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "mult0",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "mult1",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "product",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"add2": {
+			"type": "add",
+			"params": {
+				"add0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add2": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add3": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add4": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 5,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "add0",
+					"node": "mult3",
+					"output": "product"
+				},
+				{
+					"index": 1,
+					"inputName": "add1",
+					"node": "sin1",
+					"output": "sin"
+				},
+				{
+					"index": 2,
+					"inputName": "add2",
+					"node": "noiseSimplex1",
+					"output": "noise"
+				},
+				{
+					"index": 3,
+					"inputName": "add3",
+					"node": "random1",
+					"output": "random"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "add0",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "add1",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "add2",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "add3",
+						"type": "float",
+						"isArray": false
+					},
+					{
+						"name": "add4",
+						"type": "float",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "sum",
+						"type": "float",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"random1": {
+			"type": "random"
+		}
+	},
+	"inputs": ["particlesSystemGpu1"],
+	"flags": {
+		"display": true
+	},
+	"persisted_config": {
+		"variableNames": [
+			"VAR__noiseImproved1_position",
+			"VAR__noiseImproved1_freq",
+			"VAR__noiseImproved1_offset",
+			"VAR__noiseSimplex1_position",
+			"VAR__noiseSimplex1_freq",
+			"VAR__noiseSimplex1_offset",
+			"VAR__position_",
+			"VAR__previousValue1_current",
+			"VAR__subtract1_sub0",
+			"VAR__subtract1_sub1",
+			"VAR__subtract1_sub2",
+			"VAR__multScalar1_value",
+			"VAR__multScalar1__1",
+			"VAR__divide1_div0",
+			"VAR__setParam5_val",
+			"VAR__setParam2_val",
+			"VAR__setParam3_val",
+			"VAR__setParam6_val"
+		],
+		"variables": [
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			}
+		],
+		"functionNames": [
+			"globalsTime",
+			"globalsTimeDelta",
+			"noiseImprovedVector3",
+			"noiseSimplexVector3",
+			"random",
+			"mathFloat_1",
+			"multNumber",
+			"addNumber",
+			"easeO2",
+			"floatToVec3",
+			"previousValueVector3",
+			"subtractVector",
+			"multScalarVector3",
+			"divideVectorNumber",
+			"keyboardEventMatchesConfig",
+			"getParam",
+			"setParamVector3",
+			"sleep"
+		],
+		"serializedParamConfigs": [],
+		"eventDatas": [
+			{
+				"type": "keydown",
+				"emitter": "canvas",
+				"jsType": "onKey"
+			},
+			{
+				"type": "keyup",
+				"emitter": "canvas",
+				"jsType": "onKey"
+			},
+			{
+				"type": "keyup",
+				"emitter": "canvas",
+				"jsType": "onKeyup"
+			}
+		]
+	}
+}

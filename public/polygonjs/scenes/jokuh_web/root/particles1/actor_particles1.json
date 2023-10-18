@@ -1,0 +1,73 @@
+{
+	"type": "actor",
+	"nodes": {
+		"onScenePause1": {
+			"type": "onScenePause"
+		},
+		"onTick1": {
+			"type": "onTick"
+		},
+		"particlesSystemReset1": {
+			"type": "particlesSystemReset",
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "trigger",
+					"node": "onScenePause1",
+					"output": "trigger"
+				}
+			]
+		},
+		"particlesSystemStepSimulation1": {
+			"type": "particlesSystemStepSimulation",
+			"maxInputsCount": 2,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "trigger",
+					"node": "onTick1",
+					"output": "trigger"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					},
+					{
+						"name": "Object3D",
+						"type": "Object3D",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "trigger",
+						"type": "trigger",
+						"isArray": false
+					},
+					{
+						"name": "Object3D",
+						"type": "Object3D",
+						"isArray": false
+					},
+					{
+						"name": "",
+						"type": "Texture",
+						"isArray": false
+					}
+				]
+			}
+		}
+	},
+	"inputs": ["instance1"],
+	"persisted_config": {
+		"variableNames": [],
+		"variables": [],
+		"functionNames": ["globalsTime", "globalsTimeDelta", "particlesSystemReset", "particlesSystemStepSimulation"],
+		"serializedParamConfigs": [],
+		"eventDatas": []
+	}
+}

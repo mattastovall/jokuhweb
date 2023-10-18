@@ -1,0 +1,187 @@
+// insert defines
+class CustomActorEvaluator extends ActorEvaluator {
+	// insert members
+
+	// /particles1/actor4/onTick1
+	v_POLY_onTick1_time = computed(() => globalsTime());
+	v_POLY_onTick1_delta = computed(() => globalsTimeDelta());
+
+	// /particles1/actor4/noiseImproved1
+	v_POLY_noiseImproved1_noise = computed(() =>
+		noiseImprovedVector3(
+			VAR__noiseImproved1_position.set(1, 1, 1),
+			1.0,
+			VAR__noiseImproved1_freq.set(3, 3, 3),
+			VAR__noiseImproved1_offset.set(0, 0, 0),
+			3.0,
+			0.5,
+			2.0
+		)
+	);
+
+	// /particles1/actor4/noiseSimplex1
+	v_POLY_noiseSimplex1_noise = computed(() =>
+		noiseSimplexVector3(
+			VAR__noiseSimplex1_position.set(0, 0, 0),
+			1.0,
+			VAR__noiseSimplex1_freq.set(1.3, 4, 1.4),
+			VAR__noiseSimplex1_offset.set(0, 0, 0),
+			3.0,
+			0.5,
+			2.0,
+			0.0
+		)
+	);
+
+	// /particles1/actor4/random1
+	v_POLY_random1_random = computed(() => random());
+
+	// /particles1/actor4/sin1
+	v_POLY_sin1_sin = computed(() => mathFloat_1(Math.sin, this.v_POLY_onTick1_time.value));
+
+	// /particles1/actor4/mult3
+	v_POLY_mult3_product = computed(() => multNumber(this.v_POLY_noiseImproved1_noise.value, 20.0));
+
+	// /particles1/actor4/mult1
+	v_POLY_mult1_product = computed(() => multNumber(this.v_POLY_sin1_sin.value, 3.0));
+
+	// /particles1/actor4/add2
+	v_POLY_add2_sum = computed(() =>
+		addNumber(
+			this.v_POLY_mult3_product.value,
+			this.v_POLY_sin1_sin.value,
+			this.v_POLY_noiseSimplex1_noise.value,
+			this.v_POLY_random1_random.value,
+			0.0
+		)
+	);
+
+	// /particles1/actor4/mult2
+	v_POLY_mult2_product = computed(() => multNumber(0.65, this.v_POLY_mult1_product.value, 1.0));
+
+	// /particles1/actor4/easing2
+	v_POLY_easing2_out = computed(() => easeO2(this.v_POLY_mult2_product.value));
+
+	// /particles1/actor4/add1
+	v_POLY_add1_sum = computed(() =>
+		addNumber(this.v_POLY_easing2_out.value, this.v_POLY_noiseImproved1_noise.value, 0.0)
+	);
+
+	// /particles1/actor4/position
+	v_POLY_position_vec3 = computed(() =>
+		floatToVec3(this.v_POLY_add1_sum.value, this.v_POLY_add2_sum.value, 0.0, VAR__position_)
+	);
+
+	// /particles1/actor4/previousValue1
+	v_POLY_previousValue1_prev = computed(() =>
+		previousValueVector3(
+			"/particles1/actor4/previousValue1",
+			1.0,
+			VAR__previousValue1_current.copy(this.v_POLY_position_vec3.value)
+		)
+	);
+
+	// /particles1/actor4/setParam2
+	v_POLY_setParam2_getParamSinceNoInput = computed(() => getParam("/particles1/particlesSystemGpu1/cursor"));
+
+	// /particles1/actor4/subtract1
+	v_POLY_subtract1_sub = computed(() =>
+		subtractVector(
+			VAR__subtract1_sub0.copy(this.v_POLY_position_vec3.value),
+			VAR__subtract1_sub1.copy(this.v_POLY_previousValue1_prev.value),
+			VAR__subtract1_sub2.set(0, 0, 0)
+		)
+	);
+
+	// /particles1/actor4/multScalar1
+	v_POLY_multScalar1_val = computed(() =>
+		multScalarVector3(
+			VAR__multScalar1_value.copy(this.v_POLY_subtract1_sub.value),
+			this.v_POLY_onTick1_time.value,
+			VAR__multScalar1__1
+		)
+	);
+
+	// /particles1/actor4/setParam5
+	v_POLY_setParam5_getParamSinceNoInput = computed(() => getParam("/particles1/particlesSystemGpu1/velocity"));
+
+	// /particles1/actor4/divide1
+	v_POLY_divide1_divide = computed(() =>
+		divideVectorNumber(VAR__divide1_div0.copy(this.v_POLY_multScalar1_val.value), 0.5)
+	);
+
+	// /particles1/actor4/setParam3
+	v_POLY_setParam3_getParamSinceNoInput = computed(() => getParam("/particles1/particlesSystemGpu1/velocity"));
+
+	// /particles1/actor4/setParam6
+	v_POLY_setParam6_getParamSinceNoInput = computed(() => getParam("/particles1/particlesSystemGpu1/velocity"));
+
+	constructor(node, object3D) {
+		super(node, object3D);
+		// insert after constructor
+	}
+	// insert body
+
+	onKey() {
+		this.onKey2();
+	}
+	onKeyup() {
+		this.onKeyup1();
+	}
+	// /particles1/actor4/onKey2
+	onKey2() {
+		if (keyboardEventMatchesConfig("*", 0.0, 0.0, 0.0, 0.0) == false) {
+			return;
+		}
+		this.setParam5(0);
+	}
+
+	// /particles1/actor4/onKeyup1
+	onKeyup1() {
+		if (keyboardEventMatchesConfig("*", 0.0, 0.0, 0.0, 0.0) == false) {
+			return;
+		}
+		this.triggerDelay1(0);
+	}
+
+	// /particles1/actor4/setParam5
+	setParam5() {
+		setParamVector3(
+			this.v_POLY_setParam5_getParamSinceNoInput.value,
+			VAR__setParam5_val.copy(this.v_POLY_multScalar1_val.value),
+			1.0
+		);
+		this.setParam2(0);
+	}
+
+	// /particles1/actor4/setParam2
+	setParam2() {
+		setParamVector3(
+			this.v_POLY_setParam2_getParamSinceNoInput.value,
+			VAR__setParam2_val.copy(this.v_POLY_position_vec3.value),
+			1.0
+		);
+		this.setParam3(0);
+	}
+
+	// /particles1/actor4/setParam3
+	setParam3() {
+		setParamVector3(
+			this.v_POLY_setParam3_getParamSinceNoInput.value,
+			VAR__setParam3_val.copy(this.v_POLY_divide1_divide.value),
+			1.0
+		);
+	}
+
+	// /particles1/actor4/triggerDelay1
+	async triggerDelay1() {
+		await sleep(30.0);
+		this.setParam6(0);
+	}
+
+	// /particles1/actor4/setParam6
+	setParam6() {
+		setParamVector3(this.v_POLY_setParam6_getParamSinceNoInput.value, VAR__setParam6_val.set(0, 0, 0), 1.0);
+	}
+}
+return CustomActorEvaluator;

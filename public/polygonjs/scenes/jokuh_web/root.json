@@ -1,0 +1,23 @@
+{
+	"type": "root",
+	"nodes": {
+		"ambientLight2": {
+			"type": "ambientLight",
+			"params": {
+				"color": {
+					"overriden_options": {
+						"conversion": "sRGB -> linear"
+					}
+				},
+				"intensity": 1.96
+			},
+			"flags": {
+				"display": true
+			}
+		}
+	},
+	"params": {
+		"backgroundMode": 0,
+		"mainCameraPath": "/cameras2/cameras2:sopGroup/perspectiveCamera1"
+	}
+}

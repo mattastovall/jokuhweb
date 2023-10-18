@@ -1,0 +1,266 @@
+{
+	"multiple_panel": {
+		"split_ratio": 0.6216006216006216,
+		"split_panel0": {
+			"split_ratio": 0.5,
+			"split_panel0": {
+				"split_ratio": 0.5,
+				"split_panel0": {
+					"panelTypes": ["network", "viewer", "params"],
+					"currentPanelIndex": 1,
+					"panel_data": {
+						"camera": "/cameras2/cameras2:sopGroup/perspectiveCamera1",
+						"isViewerInitLayoutData": true,
+						"linkIndex": 1,
+						"overlayedNetwork": {
+							"allowed": false,
+							"displayed": false,
+							"initLayoutData": {
+								"camera": {
+									"position": {
+										"x": -550,
+										"y": 100
+									},
+									"zoom": 1
+								},
+								"history": {
+									"2": {
+										"position": {
+											"x": -550,
+											"y": 100
+										},
+										"zoom": 1
+									},
+									"183": {
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"zoom": 1
+									},
+									"1941": {
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"zoom": 1
+									},
+									"2056": {
+										"position": {
+											"x": -150,
+											"y": -50
+										},
+										"zoom": 1
+									},
+									"2493": {
+										"position": {
+											"x": -150,
+											"y": -50
+										},
+										"zoom": 1
+									},
+									"2838": {
+										"position": {
+											"x": -200,
+											"y": 200
+										},
+										"zoom": 1
+									},
+									"2963": {
+										"position": {
+											"x": 150,
+											"y": -350
+										},
+										"zoom": 1
+									},
+									"3164": {
+										"position": {
+											"x": -150,
+											"y": -50
+										},
+										"zoom": 1
+									},
+									"3263": {
+										"position": {
+											"x": 150,
+											"y": -350
+										},
+										"zoom": 1
+									},
+									"7948": {
+										"position": {
+											"x": 125,
+											"y": -400
+										},
+										"zoom": 1
+									}
+								},
+								"paramsDisplayed": false,
+								"linkIndex": 1
+							}
+						}
+					}
+				},
+				"split_panel1": {
+					"panelTypes": ["network", "viewer", "params"],
+					"currentPanelIndex": 2,
+					"panel_data": {
+						"active_folder": null,
+						"linkIndex": 1
+					}
+				},
+				"split_mode": "horizontal"
+			},
+			"split_panel1": {
+				"panelTypes": ["network", "viewer", "params", "spreadsheet"],
+				"currentPanelIndex": 3,
+				"panel_data": {
+					"linkIndex": 1
+				}
+			},
+			"split_mode": "vertical"
+		},
+		"split_panel1": {
+			"panelTypes": ["network", "params", "performance"],
+			"currentPanelIndex": 0,
+			"panel_data": {
+				"camera": {
+					"position": {
+						"x": -458.9788032287059,
+						"y": 100.27677050012706
+					},
+					"zoom": 0.8609344200000003
+				},
+				"history": {
+					"2": {
+						"position": {
+							"x": -458.9788032287059,
+							"y": 100.27677050012706
+						},
+						"zoom": 0.8609344200000003
+					},
+					"183": {
+						"position": {
+							"x": -347.58825154039016,
+							"y": -363.4263682149177
+						},
+						"zoom": 0.6266602546800025
+					},
+					"1941": {
+						"position": {
+							"x": -284.1816852179578,
+							"y": -318.4271544632819
+						},
+						"zoom": 0.6266602546800025
+					},
+					"2056": {
+						"position": {
+							"x": -166.90633987216884,
+							"y": -141.13104381282596
+						},
+						"zoom": 0.6962891718666699
+					},
+					"2493": {
+						"position": {
+							"x": 29.340638052791633,
+							"y": 6.736537171984779
+						},
+						"zoom": 0.8609344200000006
+					},
+					"2838": {
+						"position": {
+							"x": -200,
+							"y": 200
+						},
+						"zoom": 0.6276211921800026
+					},
+					"2963": {
+						"position": {
+							"x": 62.34496318961517,
+							"y": -483.214094820226
+						},
+						"zoom": 0.6973568802000015
+					},
+					"3164": {
+						"position": {
+							"x": -167.9811188251122,
+							"y": -2.056396671452376
+						},
+						"zoom": 0.5648590729620013
+					},
+					"3263": {
+						"position": {
+							"x": -10.964983998303182,
+							"y": -181.6373287177907
+						},
+						"zoom": 0.7748409780000026
+					},
+					"7948": {
+						"position": {
+							"x": 125,
+							"y": -400
+						},
+						"zoom": 0.6276211921800026
+					}
+				},
+				"paramsDisplayed": false,
+				"linkIndex": 1
+			}
+		},
+		"split_mode": "horizontal"
+	},
+	"currentNodes": ["/", "/", "/", "/", "/", "/", "/", "/"],
+	"navigationHistory": {
+		"nodePaths": {
+			"1": [
+				"/geo1",
+				"/geo1",
+				"/geo1",
+				"/",
+				"/geo1",
+				"/",
+				"/geo1",
+				"/",
+				"/geo1",
+				"/geo1/animationsNetwork1",
+				"/geo1",
+				"/geo1/animationsNetwork1",
+				"/geo1",
+				"/geo1/animationsNetwork1",
+				"/geo1",
+				"/geo1/actor1",
+				"/geo1",
+				"/geo1/actor1",
+				"/geo1",
+				"/"
+			],
+			"2": ["/", "/", "/", "/", "/", "/", "/", "/"],
+			"3": ["/", "/", "/", "/", "/", "/", "/", "/"],
+			"4": ["/", "/", "/", "/", "/", "/", "/", "/"],
+			"5": ["/", "/", "/", "/", "/", "/", "/", "/"],
+			"6": ["/", "/", "/", "/", "/", "/", "/", "/"],
+			"7": ["/", "/", "/", "/", "/", "/", "/", "/"],
+			"8": ["/", "/", "/", "/", "/", "/", "/", "/"]
+		},
+		"index": {
+			"1": 19,
+			"2": 0,
+			"3": 0,
+			"4": 0,
+			"5": 0,
+			"6": 0,
+			"7": 0,
+			"8": 0
+		}
+	},
+	"fullscreenPanelId": null,
+	"saveOptions": {
+		"createExport": false,
+		"checkRemoteAssetsUse": true,
+		"minimizeFilesCount": false,
+		"compressJs": true,
+		"createZip": false,
+		"runPostExportCommand": false
+	},
+	"paramsModal": []
+}

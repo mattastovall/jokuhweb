@@ -1,0 +1,39 @@
+// insert defines
+class CustomActorEvaluator extends ActorEvaluator {
+	// insert members
+
+	// /particles1/actor2/onTick1
+	v_POLY_onTick1_time = computed(() => globalsTime());
+	v_POLY_onTick1_delta = computed(() => globalsTimeDelta());
+
+	// /particles1/actor2/sin1
+	v_POLY_sin1_sin = computed(() => mathFloat_1(Math.sin, this.v_POLY_onTick1_time.value));
+
+	// /particles1/actor2/floatToVec3_1
+	v_POLY_floatToVec3_1_vec3 = computed(() => floatToVec3(0.0, this.v_POLY_sin1_sin.value, 0.0, VAR__floatToVec3_1_));
+
+	constructor(node, object3D) {
+		super(node, object3D);
+		// insert after constructor
+	}
+	// insert body
+
+	onTick() {
+		this.onTick1();
+	}
+	// /particles1/actor2/onTick1
+	onTick1() {
+		this.setObjectPosition1(0);
+	}
+
+	// /particles1/actor2/setObjectPosition1
+	setObjectPosition1() {
+		setObjectPosition(
+			this.object3D,
+			VAR__setObjectPosition1_position.copy(this.v_POLY_floatToVec3_1_vec3.value),
+			1.0,
+			true
+		);
+	}
+}
+return CustomActorEvaluator;

@@ -1,0 +1,69 @@
+{
+	"type": "animationsNetwork",
+	"nodes": {
+		"duration1": {
+			"type": "duration",
+			"params": {
+				"duration": 10
+			}
+		},
+		"easing1": {
+			"type": "easing",
+			"inputs": ["duration1"]
+		},
+		"propertyName1": {
+			"type": "propertyName",
+			"params": {
+				"name": "t"
+			},
+			"inputs": ["target2"]
+		},
+		"propertyValue2": {
+			"type": "propertyValue",
+			"params": {
+				"size": 1
+			},
+			"inputs": ["propertyName1"]
+		},
+		"PLAY": {
+			"type": "null",
+			"inputs": ["propertyValue1"]
+		},
+		"RESET": {
+			"type": "null",
+			"inputs": ["propertyValue2"]
+		},
+		"CONTROLS": {
+			"type": "play",
+			"params": {
+				"debug": true
+			},
+			"inputs": ["RESET", "PLAY"]
+		},
+		"propertyValue1": {
+			"type": "propertyValue",
+			"params": {
+				"size": 1,
+				"value1": 1,
+				"value3": [0, 1, 0]
+			},
+			"inputs": ["propertyName1"]
+		},
+		"target2": {
+			"type": "target",
+			"params": {
+				"type": 1,
+				"nodePath": "../../attribCreate1"
+			}
+		},
+		"propertyValue3": {
+			"type": "propertyValue",
+			"params": {
+				"mode": 2,
+				"nodePath": "../../curveGetPoint2",
+				"propertyName": "t"
+			},
+			"inputs": ["CONTROLS"]
+		}
+	}
+}

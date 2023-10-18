@@ -1,0 +1,41 @@
+// insert defines
+class CustomActorEvaluator extends ActorEvaluator {
+	// insert members
+
+	// /particles1/actor_particles1/onTick1
+	v_POLY_onTick1_time = computed(() => globalsTime());
+	v_POLY_onTick1_delta = computed(() => globalsTimeDelta());
+
+	constructor(node, object3D) {
+		super(node, object3D);
+		// insert after constructor
+	}
+	// insert body
+
+	onScenePause() {
+		this.onScenePause1();
+	}
+	onTick() {
+		this.onTick1();
+	}
+	// /particles1/actor_particles1/onScenePause1
+	onScenePause1() {
+		this.particlesSystemReset1(0);
+	}
+
+	// /particles1/actor_particles1/onTick1
+	onTick1() {
+		this.particlesSystemStepSimulation1(0);
+	}
+
+	// /particles1/actor_particles1/particlesSystemReset1
+	particlesSystemReset1() {
+		particlesSystemReset(this.object3D);
+	}
+
+	// /particles1/actor_particles1/particlesSystemStepSimulation1
+	particlesSystemStepSimulation1() {
+		particlesSystemStepSimulation(this.object3D, { texture_: this.v_POLY_particlesSystemStepSimulation1_ });
+	}
+}
+return CustomActorEvaluator;

@@ -1,0 +1,1409 @@
+{
+	"type": "particlesSystemGpu",
+	"nodes": {
+		"acceleration1": {
+			"type": "acceleration",
+			"params": {
+				"position": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"velocity": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mass": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"force": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "position",
+					"node": "null1",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "velocity",
+					"node": "maxLength1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "position",
+						"type": "vec3"
+					},
+					{
+						"name": "velocity",
+						"type": "vec3"
+					},
+					{
+						"name": "mass",
+						"type": "float"
+					},
+					{
+						"name": "force",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "position",
+						"type": "vec3"
+					},
+					{
+						"name": "velocity",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"add2": {
+			"type": "add",
+			"params": {
+				"add0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add2": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "add0",
+					"node": "attribute_state_IN",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "add1",
+					"node": "ramp1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "add0",
+						"type": "float"
+					},
+					{
+						"name": "add1",
+						"type": "float"
+					},
+					{
+						"name": "add2",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "sum",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"attribute1": {
+			"type": "attribute",
+			"params": {
+				"name": "instancePosition",
+				"type": 2,
+				"texportWhenConnected": 1,
+				"in": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 1,
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"attribute2": {
+			"type": "attribute",
+			"params": {
+				"name": "instancePosition",
+				"type": 2,
+				"texportWhenConnected": 1,
+				"exportWhenConnected": true,
+				"in": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 1,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "mix2",
+					"output": "mix"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"attribute3": {
+			"type": "attribute",
+			"params": {
+				"name": "id",
+				"texportWhenConnected": 1,
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"maxInputsCount": 1,
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"attribute4": {
+			"type": "attribute",
+			"params": {
+				"name": "restP",
+				"type": 2,
+				"texportWhenConnected": 1,
+				"in": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 1,
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"attribute_state_IN": {
+			"type": "attribute",
+			"params": {
+				"name": "state",
+				"texportWhenConnected": 1,
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"maxInputsCount": 1,
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"attribute_state_OUT": {
+			"type": "attribute",
+			"params": {
+				"name": "state",
+				"texportWhenConnected": 1,
+				"exportWhenConnected": true,
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"maxInputsCount": 1,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "clamp1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"clamp1": {
+			"type": "clamp",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"min": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				},
+				"max": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "subtract1",
+					"output": "subtract"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "min",
+						"type": "float"
+					},
+					{
+						"name": "max",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"complement1": {
+			"type": "complement",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "clamp1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"distance1": {
+			"type": "distance",
+			"params": {
+				"p0": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"p1": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "p0",
+					"node": "null2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "p1",
+					"node": "cursor",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "p0",
+						"type": "vec3"
+					},
+					{
+						"name": "p1",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"fitFrom01_1": {
+			"type": "fitFrom01",
+			"params": {
+				"val": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"destMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": 0.04
+				},
+				"destMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": 0.13
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "val",
+					"node": "random2",
+					"output": "rand"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "float"
+					},
+					{
+						"name": "destMin",
+						"type": "float"
+					},
+					{
+						"name": "destMax",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"floatToVec2_1": {
+			"type": "floatToVec2",
+			"params": {
+				"x": {
+					"overriden_options": {}
+				},
+				"y": {
+					"raw_input": 3.8,
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "x",
+					"node": "attribute3",
+					"output": "val"
+				}
+			]
+		},
+		"floatToVec2_2": {
+			"type": "floatToVec2",
+			"params": {
+				"x": {
+					"overriden_options": {}
+				},
+				"y": {
+					"raw_input": 3.92,
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "x",
+					"node": "attribute3",
+					"output": "val"
+				}
+			]
+		},
+		"globals1": {
+			"type": "globals"
+		},
+		"maxLength1": {
+			"type": "maxLength",
+			"params": {
+				"val": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"max": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 4
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "val",
+					"node": "mix1",
+					"output": "mix"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "vec3"
+					},
+					{
+						"name": "max",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"mix1": {
+			"type": "mix",
+			"params": {
+				"value0": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"value1": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"blend": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value0",
+					"node": "multScalar1",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "value1",
+					"node": "velocity",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"inputName": "blend",
+					"node": "mult1",
+					"output": "product"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "vec3"
+					},
+					{
+						"name": "value1",
+						"type": "vec3"
+					},
+					{
+						"name": "blend",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "mix",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"mix2": {
+			"type": "mix",
+			"params": {
+				"value0": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"value1": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"blend": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.04
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value0",
+					"node": "acceleration1",
+					"output": "position"
+				},
+				{
+					"index": 1,
+					"inputName": "value1",
+					"node": "attribute4",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"inputName": "blend",
+					"node": "multAdd2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "vec3"
+					},
+					{
+						"name": "value1",
+						"type": "vec3"
+					},
+					{
+						"name": "blend",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "mix",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"mult1": {
+			"type": "mult",
+			"params": {
+				"mult0": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult1": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult2": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "mult0",
+					"node": "ramp1",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "mult1",
+					"node": "random1",
+					"output": "rand"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "mult0",
+						"type": "float"
+					},
+					{
+						"name": "mult1",
+						"type": "float"
+					},
+					{
+						"name": "mult2",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "product",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd2": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": 0.06
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "complement1",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "preAdd",
+					"node": "fitFrom01_1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multScalar1": {
+			"type": "multScalar",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": 0.9
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "globals1",
+					"output": "velocity"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "vec3"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"null1": {
+			"type": "null",
+			"params": {
+				"in": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "attribute1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"null2": {
+			"type": "null",
+			"params": {
+				"in": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "attribute1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"ramp1": {
+			"type": "ramp",
+			"params": {
+				"input": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "input",
+					"node": "distance1",
+					"output": "val"
+				}
+			]
+		},
+		"random1": {
+			"type": "random",
+			"params": {
+				"seed": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "seed",
+					"node": "floatToVec2_1",
+					"output": "vec2"
+				}
+			]
+		},
+		"random2": {
+			"type": "random",
+			"params": {
+				"seed": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "seed",
+					"node": "floatToVec2_2",
+					"output": "vec2"
+				}
+			]
+		},
+		"subtract1": {
+			"type": "subtract",
+			"params": {
+				"sub0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false
+					}
+				},
+				"sub1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true
+					},
+					"raw_input": 0.01
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "sub0",
+					"node": "add2",
+					"output": "sum"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "sub0",
+						"type": "float"
+					},
+					{
+						"name": "sub1",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "subtract",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"cursor": {
+			"type": "param",
+			"params": {
+				"name": "cursor",
+				"type": 4
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"velocity_output": {
+			"type": "output",
+			"inputs": [
+				null,
+				{
+					"index": 1,
+					"inputName": "velocity",
+					"node": "acceleration1",
+					"output": "velocity"
+				}
+			]
+		},
+		"velocity": {
+			"type": "param",
+			"params": {
+				"name": "velocity",
+				"type": 4
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		}
+	},
+	"params": {
+		"material": "../MAT/meshBasicBuilder_INSTANCES_PARTICLES",
+		"cursor": {
+			"type": "vector3",
+			"default_value": [0, 0, 0],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false,
+				"dependentOnFoundNode": true
+			},
+			"raw_input": [0.05990768326273621, 0.6769836058270033, 0],
+			"overriden_options": {
+				"callback": "{}"
+			}
+		},
+		"ramp1": {
+			"type": "ramp",
+			"default_value": {
+				"interpolation": "cubic",
+				"points": [
+					{
+						"position": 0,
+						"value": 0
+					},
+					{
+						"position": 1,
+						"value": 1
+					}
+				]
+			},
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false,
+				"dependentOnFoundNode": true
+			},
+			"raw_input": {
+				"interpolation": "cubic",
+				"points": [
+					{
+						"position": 0,
+						"value": 1
+					},
+					{
+						"position": 0.4619883040935673,
+						"value": 0
+					}
+				]
+			},
+			"overriden_options": {
+				"callback": "{}"
+			}
+		},
+		"velocity": {
+			"type": "vector3",
+			"default_value": [0, 0, 0],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false,
+				"dependentOnFoundNode": true
+			},
+			"overriden_options": {
+				"callback": "{}"
+			}
+		}
+	},
+	"inputs": ["actor_particles1"],
+	"persisted_config": {
+		"texture_allocations": {
+			"writable": [
+				{
+					"instancePosition_x_state": [
+						{
+							"name": "instancePosition",
+							"size": 3,
+							"nodes": [
+								"/particles1/particlesSystemGpu1/attribute2",
+								"/particles1/particlesSystemGpu1/attribute1"
+							]
+						},
+						{
+							"name": "state",
+							"size": 1,
+							"nodes": [
+								"/particles1/particlesSystemGpu1/attribute_state_OUT",
+								"/particles1/particlesSystemGpu1/attribute_state_IN"
+							]
+						}
+					]
+				},
+				{
+					"velocity": [
+						{
+							"name": "velocity",
+							"size": 3,
+							"nodes": ["/particles1/particlesSystemGpu1/velocity_output"]
+						}
+					]
+				}
+			],
+			"readonly": [
+				{
+					"restP_x_id": [
+						{
+							"name": "restP",
+							"size": 3,
+							"nodes": ["/particles1/particlesSystemGpu1/attribute4"]
+						},
+						{
+							"name": "id",
+							"size": 1,
+							"nodes": ["/particles1/particlesSystemGpu1/attribute3"]
+						}
+					]
+				}
+			]
+		},
+		"param_uniform_pairs": [
+			["ramp1", "v_POLY_ramp_ramp1"],
+			["cursor", "v_POLY_param_cursor"],
+			["velocity", "v_POLY_param_velocity"]
+		],
+		"uniforms_owner": {
+			"metadata": {
+				"version": 4.5,
+				"type": "Material",
+				"generator": "Material.toJSON"
+			},
+			"uuid": "/particles1/particlesSystemGpu1-main",
+			"type": "ShaderMaterial",
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"colorWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680,
+			"forceSinglePass": true,
+			"fog": false,
+			"glslVersion": null,
+			"uniforms": {
+				"v_POLY_ramp_ramp1": {
+					"value": null
+				},
+				"v_POLY_param_cursor": {
+					"type": "v3",
+					"value": [0.05990768326273621, 0.6769836058270033, 0]
+				},
+				"v_POLY_param_velocity": {
+					"type": "v3",
+					"value": [0, 0, 0]
+				}
+			},
+			"vertexShader": "void main() {\n\tgl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n}",
+			"fragmentShader": "void main() {\n\tgl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );\n}",
+			"lights": false,
+			"clipping": false
+		}
+	}
+}
