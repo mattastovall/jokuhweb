@@ -19,8 +19,7 @@ export const loadScene_jokuh_web = async function (options = {}) {
   const runRegister = options.runRegister != null ? options.runRegister : true;
   const loadModules = options.loadModules != null ? options.loadModules : true;
 
-  const moduleNames = loadModules ? ["GSAP"] : [];
-  const modulePromises = [import("./modules/GSAP.js")];
+  const moduleNames = loadModules ? [] : [];
   const promises = [
     import("./loadSceneFromSceneData.js"),
     sceneData == null
@@ -28,7 +27,6 @@ export const loadScene_jokuh_web = async function (options = {}) {
       : (() => {
           return new Promise((resolve) => resolve());
         })(),
-    ...modulePromises,
   ];
   const results = await Promise.all(promises);
   const { Poly, loadSceneFromSceneData_jokuh_web } = results[0];

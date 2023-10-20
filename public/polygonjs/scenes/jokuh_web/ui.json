@@ -1,35 +1,71 @@
 {
 	"nodes": {
-		"ambientLight2": {
-			"pos": [550, -300]
+		"ambientLight1": {
+			"pos": [500, -200]
 		},
 		"particles1": {
-			"pos": [350, -300],
+			"pos": [300, -250],
 			"nodes": {
 				"instance1": {
 					"pos": [-450, 700]
 				},
 				"restAttributes1": {
-					"pos": [-350, 450]
+					"pos": [-250, 650]
 				},
 				"sphere1": {
 					"pos": [-600, 500]
 				},
 				"point2": {
-					"pos": [0, 750]
+					"pos": [-50, 500]
 				},
 				"scatter2": {
-					"pos": [250, 550]
+					"pos": [0, 350]
 				},
 				"fileOBJ1": {
 					"pos": [0, 100]
 				},
 				"copy1": {
-					"pos": [300, 400]
+					"pos": [250, 250]
+				},
+				"fileSVG1": {
+					"pos": [350, 500]
+				},
+				"transform1": {
+					"pos": [100, 600]
+				},
+				"curveFromPoints1": {
+					"pos": [250, 900]
+				},
+				"objectProperties1": {
+					"pos": [100, 1150]
+				},
+				"circle1": {
+					"pos": [550, 950]
+				},
+				"objectProperties2": {
+					"pos": [500, 1150]
+				},
+				"merge1": {
+					"pos": [-50, 1350]
+				},
+				"circle2": {
+					"pos": [550, 450]
+				},
+				"scatter1": {
+					"pos": [-150, 900]
+				},
+				"point1": {
+					"pos": [100, 800]
+				},
+				"resample1": {
+					"pos": [0, 900]
+				},
+				"noise1": {
+					"pos": [-50, 1000]
 				},
 				"MAT": {
 					"pos": [-650, 700],
-					"selection": ["meshBasicBuilder_INSTANCES_PARTICLES"],
+					"selection": ["meshBasicBuilder_INSTANCES"],
 					"nodes": {
 						"meshBasicBuilder_INSTANCES": {
 							"pos": [0, 0],
@@ -127,7 +163,7 @@
 									"pos": [-650, 300]
 								},
 								"output1": {
-									"pos": [200, 0]
+									"pos": [300, 0]
 								},
 								"ramp1": {
 									"pos": [-400, 50]
@@ -142,7 +178,7 @@
 									"pos": [-500, 300]
 								},
 								"rgbToHsv1": {
-									"pos": [0, 300]
+									"pos": [0, 200]
 								},
 								"exp1": {
 									"pos": [-300, 450]
@@ -190,10 +226,10 @@
 					}
 				},
 				"particlesSystemGpu1": {
-					"pos": [-350, 950],
+					"pos": [-650, 1000],
 					"nodes": {
 						"acceleration1": {
-							"pos": [450, -650]
+							"pos": [400, -750]
 						},
 						"add2": {
 							"pos": [150, 500]
@@ -202,7 +238,7 @@
 							"pos": [-600, -800]
 						},
 						"attribute2": {
-							"pos": [800, -550]
+							"pos": [1000, -650]
 						},
 						"attribute3": {
 							"pos": [-500, 200]
@@ -223,7 +259,7 @@
 							"pos": [550, 100]
 						},
 						"distance1": {
-							"pos": [-250, -100]
+							"pos": [-350, -50]
 						},
 						"fitFrom01_1": {
 							"pos": [-150, 350]
@@ -235,25 +271,25 @@
 							"pos": [-350, 350]
 						},
 						"globals1": {
-							"pos": [-300, -650]
+							"pos": [-400, -750]
 						},
 						"maxLength1": {
-							"pos": [250, -550]
+							"pos": [-250, -250]
 						},
 						"mix1": {
-							"pos": [100, -550]
+							"pos": [0, -600]
 						},
 						"mix2": {
-							"pos": [650, -450]
+							"pos": [700, -600]
 						},
 						"mult1": {
-							"pos": [0, 0]
+							"pos": [200, -50]
 						},
 						"multAdd2": {
 							"pos": [700, 100]
 						},
 						"multScalar1": {
-							"pos": [-150, -650]
+							"pos": [-200, -600]
 						},
 						"null1": {
 							"pos": [200, -800]
@@ -262,7 +298,7 @@
 							"pos": [-500, -200]
 						},
 						"ramp1": {
-							"pos": [-150, -100]
+							"pos": [-100, -50]
 						},
 						"random1": {
 							"pos": [-150, 200]
@@ -274,225 +310,243 @@
 							"pos": [350, 500]
 						},
 						"cursor": {
-							"pos": [-500, 50]
+							"pos": [-600, 0]
 						},
 						"velocity_output": {
-							"pos": [700, -800]
+							"pos": [900, -850]
 						},
 						"velocity": {
+							"pos": [-500, -450]
+						},
+						"vec3ToFloat1": {
+							"pos": [-50, -300]
+						},
+						"noise1": {
+							"pos": [300, -550]
+						},
+						"vel_pos": {
 							"pos": [-300, -450]
-						}
-					}
-				},
-				"actor2": {
-					"pos": [-500, 1750],
-					"nodes": {
-						"onTick1": {
-							"pos": [-100, 0]
 						},
-						"setObjectPosition1": {
-							"pos": [400, 0]
+						"multScalar2": {
+							"pos": [-100, -500]
 						},
-						"floatToVec3_1": {
-							"pos": [200, 100]
+						"multScalar3": {
+							"pos": [150, -650]
 						},
-						"sin1": {
-							"pos": [100, 100]
+						"easing1": {
+							"pos": [800, -750]
+						},
+						"easing2": {
+							"pos": [400, -450]
+						},
+						"easing3": {
+							"pos": [-200, -500]
+						},
+						"noise2": {
+							"pos": [100, -450]
+						},
+						"vel_mult": {
+							"pos": [150, -300]
+						},
+						"multScalar4": {
+							"pos": [300, -300]
+						},
+						"random3": {
+							"pos": [500, -550]
 						}
 					}
 				},
 				"actor4": {
-					"pos": [-350, 1100],
+					"pos": [-650, 1200],
+					"selection": [
+						"getObject1",
+						"getObjectUserData1",
+						"catmullRomCurve3GetPoint1",
+						"onTick3",
+						"multAdd1",
+						"mod1"
+					],
 					"nodes": {
 						"onKey2": {
-							"pos": [450, 200]
+							"pos": [-1250, -450]
 						},
-						"noiseSimplex1": {
-							"pos": [-150, 1250]
+						"onTick2": {
+							"pos": [-1800, -300]
 						},
-						"sphere1": {
-							"pos": [450, 800]
+						"getObject1": {
+							"pos": [-850, 600]
 						},
-						"onTick1": {
-							"pos": [-850, 950]
+						"getObjectUserData1": {
+							"pos": [-550, 750]
 						},
-						"sin1": {
-							"pos": [-500, 1200]
+						"catmullRomCurve3GetPoint1": {
+							"pos": [-300, 750]
 						},
-						"sin2": {
-							"pos": [-400, 1050]
+						"onTick3": {
+							"pos": [-900, 750]
 						},
-						"mult1": {
-							"pos": [-200, 1100]
+						"multAdd1": {
+							"pos": [-650, 950]
 						},
-						"mult2": {
-							"pos": [-200, 950]
+						"mod1": {
+							"pos": [-350, 950]
 						},
-						"position": {
-							"pos": [150, 850]
+						"Cursor_Pos": {
+							"pos": [350, 50]
 						},
-						"setParam2": {
-							"pos": [850, 350]
+						"Velocity": {
+							"pos": [950, 50]
 						},
-						"previousValue1": {
-							"pos": [550, 1100]
+						"subtract2": {
+							"pos": [550, 650]
 						},
-						"multScalar1": {
-							"pos": [800, 750]
+						"previousValue2": {
+							"pos": [250, 900]
 						},
-						"subtract1": {
-							"pos": [550, 900]
-						},
-						"setParam3": {
-							"pos": [1150, 350]
+						"multScalar2": {
+							"pos": [700, 450]
 						},
 						"divide1": {
-							"pos": [1100, 800]
+							"pos": [300, 500]
 						},
-						"setParam4": {
-							"pos": [1400, 650]
-						},
-						"setParam5": {
-							"pos": [700, 250]
-						},
-						"noiseImproved1": {
-							"pos": [-500, 1050]
-						},
-						"easing2": {
-							"pos": [-150, 1100]
-						},
-						"onKeyup1": {
-							"pos": [200, 300]
-						},
-						"setParam6": {
-							"pos": [1200, 500]
-						},
-						"add1": {
-							"pos": [-300, 950]
+						"divide2": {
+							"pos": [650, 200]
 						},
 						"triggerDelay1": {
-							"pos": [800, 500]
+							"pos": [750, 50]
 						},
-						"mult3": {
-							"pos": [-250, 1000]
+						"constant1": {
+							"pos": [-300, 200]
+						},
+						"triggerTwoWaySwitch1": {
+							"pos": [300, -350]
+						},
+						"setParam2": {
+							"pos": [-850, 400]
+						},
+						"add1": {
+							"pos": [-550, 400]
+						},
+						"Velocity1": {
+							"pos": [200, -700]
+						},
+						"compare1": {
+							"pos": [-200, -300]
+						},
+						"previousValue1": {
+							"pos": [-350, 550]
 						},
 						"add2": {
-							"pos": [-50, 1050]
+							"pos": [-100, 500]
 						},
-						"random1": {
-							"pos": [50, 1100]
+						"constant2": {
+							"pos": [-900, 150]
+						},
+						"add3": {
+							"pos": [-200, 350]
+						},
+						"add4": {
+							"pos": [-1050, -50]
+						},
+						"mod2": {
+							"pos": [-600, 150]
+						},
+						"subtract1": {
+							"pos": [-500, -50]
+						},
+						"triggerDelay2": {
+							"pos": [0, -900]
+						},
+						"triggerFilter1": {
+							"pos": [150, -450]
+						},
+						"triggerTwoWaySwitch2": {
+							"pos": [-550, -800]
+						},
+						"onKey1": {
+							"pos": [-1550, -900]
+						},
+						"setParam3": {
+							"pos": [-100, -1050]
+						},
+						"add5": {
+							"pos": [-250, -500]
+						},
+						"floatToVec3_1": {
+							"pos": [-400, -450]
+						},
+						"triggerFilter2": {
+							"pos": [-600, -950]
+						},
+						"compare2": {
+							"pos": [-700, -1200]
+						},
+						"setParam1": {
+							"pos": [-1000, -600]
+						},
+						"switch_key": {
+							"pos": [-1500, -1150]
+						},
+						"setParam4": {
+							"pos": [-700, -500]
+						},
+						"previousValue3": {
+							"pos": [-1050, -900]
+						},
+						"add6": {
+							"pos": [-900, -1000]
+						},
+						"subtract3": {
+							"pos": [-950, -1250]
+						},
+						"triggerDelay3": {
+							"pos": [-1500, -650]
+						},
+						"setParam5": {
+							"pos": [-1300, -700]
+						},
+						"triggerDelay4": {
+							"pos": [-250, -750]
+						},
+						"time": {
+							"pos": [-1350, -250]
+						},
+						"add7": {
+							"pos": [-1400, -450]
+						},
+						"setParam6": {
+							"pos": [-1050, -350]
+						},
+						"xime": {
+							"pos": [-1250, -200]
+						},
+						"subtract4": {
+							"pos": [-1150, -250]
+						},
+						"add8": {
+							"pos": [-950, -250]
+						},
+						"previousValue4": {
+							"pos": [-1050, -150]
+						},
+						"setParam7": {
+							"pos": [-800, -300]
+						},
+						"vel_mult": {
+							"pos": [-800, -100]
 						}
 					}
+				},
+				"curveGetPoint1": {
+					"pos": [-250, 1150]
 				}
 			}
 		},
 		"cameras2": {
-			"pos": [350, -100],
+			"pos": [300, -100],
 			"nodes": {
 				"perspectiveCamera1": {
 					"pos": [0, -50]
-				}
-			}
-		},
-		"geo1": {
-			"pos": [550, -100],
-			"nodes": {
-				"fileSVG1": {
-					"pos": [-50, -200]
-				},
-				"transform1": {
-					"pos": [50, -50]
-				},
-				"instance1": {
-					"pos": [50, 300]
-				},
-				"sphere1": {
-					"pos": [-150, 100]
-				},
-				"noise1": {
-					"pos": [100, 500]
-				},
-				"attribPromote1": {
-					"pos": [100, 400]
-				},
-				"curveGetPoint2": {
-					"pos": [250, 150]
-				},
-				"MAT": {
-					"pos": [-200, 100],
-					"nodes": {
-						"meshLambertBuilder_INSTANCES": {
-							"pos": [0, 0],
-							"nodes": {
-								"instanceTransform1": {
-									"pos": [0, 0]
-								},
-								"output1": {
-									"pos": [200, 0]
-								},
-								"globals1": {
-									"pos": [-200, 0]
-								}
-							}
-						}
-					}
-				},
-				"animationsNetwork1": {
-					"pos": [400, 100],
-					"selection": ["propertyValue1"],
-					"nodes": {
-						"duration1": {
-							"pos": [0, -50]
-						},
-						"easing1": {
-							"pos": [50, 50]
-						},
-						"propertyName1": {
-							"pos": [0, 400]
-						},
-						"propertyValue2": {
-							"pos": [-300, 500]
-						},
-						"PLAY": {
-							"pos": [0, 600]
-						},
-						"RESET": {
-							"pos": [-300, 600]
-						},
-						"CONTROLS": {
-							"pos": [-150, 700]
-						},
-						"propertyValue1": {
-							"pos": [0, 500]
-						},
-						"target2": {
-							"pos": [0, 300]
-						},
-						"propertyValue3": {
-							"pos": [-150, 850]
-						}
-					}
-				},
-				"actor1": {
-					"pos": [150, 100],
-					"selection": ["setObjectAttribute1"],
-					"nodes": {
-						"onTick1": {
-							"pos": [-100, 0]
-						},
-						"setObjectPosition1": {
-							"pos": [400, 0]
-						},
-						"floatToVec3_1": {
-							"pos": [200, 150]
-						},
-						"sin1": {
-							"pos": [0, 100]
-						},
-						"setObjectAttribute1": {
-							"pos": [150, -100]
-						}
-					}
 				}
 			}
 		}

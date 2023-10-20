@@ -58,7 +58,7 @@
 						"spare": true,
 						"editable": true
 					},
-					"raw_input": 0.26
+					"raw_input": 0.25
 				},
 				"destMax": {
 					"type": "float",

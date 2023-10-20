@@ -73,7 +73,7 @@ void main() {
 	float v_POLY_exp1_val = exp(v_POLY_random1_rand);
 	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/divide1
-	float v_POLY_divide1_divide = (v_POLY_exp1_val / 0.59);
+	float v_POLY_divide1_divide = (v_POLY_exp1_val / 0.79);
 	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/floatToVec3_1
 	vec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_mult1_product, v_POLY_exp1_val, v_POLY_divide1_divide);

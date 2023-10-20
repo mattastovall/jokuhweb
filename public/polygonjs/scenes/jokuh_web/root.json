@@ -1,16 +1,8 @@
 {
 	"type": "root",
 	"nodes": {
-		"ambientLight2": {
+		"ambientLight1": {
 			"type": "ambientLight",
-			"params": {
-				"color": {
-					"overriden_options": {
-						"conversion": "sRGB -> linear"
-					}
-				},
-				"intensity": 1.96
-			},
 			"flags": {
 				"display": true
 			}

@@ -19,7 +19,7 @@
 		"sphere1": {
 			"type": "sphere",
 			"params": {
-				"radius": 0.03
+				"radius": 0.02
 			}
 		},
 		"point2": {
@@ -35,7 +35,7 @@
 		"scatter2": {
 			"type": "scatter",
 			"params": {
-				"pointsCount": 9500,
+				"pointsCount": 15000,
 				"attributesToTransfer": "P"
 			},
 			"inputs": ["copy1"]
@@ -43,7 +43,7 @@
 		"fileOBJ1": {
 			"type": "fileOBJ",
 			"params": {
-				"url": "models/Fill_remesh.obj?timestamp=1697509741939",
+				"url": "models/Fill_remesh.obj?timestamp=-1",
 				"matrixAutoUpdate": true
 			}
 		},
@@ -56,6 +56,96 @@
 				"copyAttributes": true
 			},
 			"inputs": ["fileOBJ1"]
+		},
+		"fileSVG1": {
+			"type": "fileSVG",
+			"params": {
+				"url": "/textures/Jokuh_Stroke_Inf.svg?timestamp=1697694185389",
+				"drawFillShapes": 0,
+				"strokeWidth": 0.2
+			}
+		},
+		"transform1": {
+			"type": "transform",
+			"params": {
+				"t": [1.4570030165900898, 0.7875445701658832, 0],
+				"s": [-1, -1, 1],
+				"scale": 0.027
+			},
+			"inputs": ["fileSVG1"]
+		},
+		"curveFromPoints1": {
+			"type": "curveFromPoints",
+			"params": {
+				"pointsCount": 43,
+				"closed": 1,
+				"tension": 1
+			},
+			"inputs": ["point1"]
+		},
+		"objectProperties1": {
+			"type": "objectProperties",
+			"params": {
+				"tname": 1,
+				"name": "curve"
+			},
+			"inputs": ["curveFromPoints1"]
+		},
+		"circle1": {
+			"type": "circle"
+		},
+		"objectProperties2": {
+			"type": "objectProperties",
+			"params": {
+				"tname": 1,
+				"name": "debugObject"
+			},
+			"inputs": ["circle1"]
+		},
+		"merge1": {
+			"type": "merge",
+			"inputs": ["actor4", "objectProperties1", "objectProperties2"],
+			"flags": {
+				"display": true
+			}
+		},
+		"circle2": {
+			"type": "circle"
+		},
+		"scatter1": {
+			"type": "scatter",
+			"params": {
+				"pointsCount": 129,
+				"seed": 11
+			},
+			"inputs": ["point1"]
+		},
+		"point1": {
+			"type": "point",
+			"inputs": ["transform1"]
+		},
+		"resample1": {
+			"type": "resample",
+			"params": {
+				"tension": 0,
+				"pointsCount": 112
+			},
+			"inputs": ["point1"]
+		},
+		"noise1": {
+			"type": "noise",
+			"params": {
+				"amplitude": 0.33,
+				"freq": [0.8, 0.8, 0.8],
+				"offset": ["0+($F*0.001)", "0+($F*0.01)", 0],
+				"octaves": 1,
+				"freqIncrease": 3.2
+			},
+			"inputs": ["curveFromPoints1"]
+		},
+		"curveGetPoint1": {
+			"type": "curveGetPoint",
+			"inputs": ["noise1"]
 		}
 	},
 	"params": {

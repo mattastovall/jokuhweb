@@ -433,7 +433,7 @@ void main() {
 	float v_POLY_ramp1_val = texture2D(v_POLY_ramp_ramp1, vec2(v_POLY_random2_rand, 0.0)).x;
 	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/fitFrom01_1
-	float v_POLY_fitFrom01_1_val = fitFrom01(v_POLY_ramp1_val, 0.22, 1.4000000000000001);
+	float v_POLY_fitFrom01_1_val = fitFrom01(v_POLY_ramp1_val, 0.21, 1.0);
 	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/floatToVec3_2
 	vec3 v_POLY_floatToVec3_2_vec3 = vec3(v_POLY_fitFrom01_1_val, v_POLY_fitFrom01_1_val, v_POLY_fitFrom01_1_val);
