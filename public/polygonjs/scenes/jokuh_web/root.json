@@ -1,15 +1,8 @@
 {
 	"type": "root",
-	"nodes": {
-		"ambientLight1": {
-			"type": "ambientLight",
-			"flags": {
-				"display": true
-			}
-		}
-	},
+	"nodes": {},
 	"params": {
-		"backgroundMode": 0,
+		"bgColor": [0, 0, 0],
 		"mainCameraPath": "/cameras2/cameras2:sopGroup/perspectiveCamera1"
 	}
 }

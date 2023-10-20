@@ -299,15 +299,7 @@
 				"hsv": {
 					"overriden_options": {}
 				}
-			},
-			"inputs": [
-				{
-					"index": 0,
-					"inputName": "hsv",
-					"node": "floatToVec3_1",
-					"output": "vec3"
-				}
-			]
+			}
 		},
 		"instanceTransform1": {
 			"type": "instanceTransform",
@@ -431,8 +423,8 @@
 				{
 					"index": 2,
 					"inputName": "color",
-					"node": "hsvToRgb1",
-					"output": "rgb"
+					"node": "constant1",
+					"output": "val"
 				}
 			]
 		},
@@ -581,7 +573,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 0.79
+					"raw_input": 0
 				}
 			},
 			"inputs": [
@@ -633,7 +625,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 0.1
+					"raw_input": 0.12
 				}
 			},
 			"inputs": [
@@ -659,6 +651,23 @@
 					{
 						"name": "product",
 						"type": "float"
+					}
+				]
+			}
+		},
+		"constant1": {
+			"type": "constant",
+			"params": {
+				"type": 4,
+				"color": [0.051269458367115384, 0.051269458367115384, 0.051269458367115384],
+				"asColor": 1
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
 					}
 				]
 			}

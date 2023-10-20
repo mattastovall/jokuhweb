@@ -19,7 +19,8 @@
 		"sphere1": {
 			"type": "sphere",
 			"params": {
-				"radius": 0.02
+				"radius": 0.007,
+				"resolution": [10, 10]
 			}
 		},
 		"point2": {
@@ -35,7 +36,7 @@
 		"scatter2": {
 			"type": "scatter",
 			"params": {
-				"pointsCount": 15000,
+				"pointsCount": 54000,
 				"attributesToTransfer": "P"
 			},
 			"inputs": ["copy1"]

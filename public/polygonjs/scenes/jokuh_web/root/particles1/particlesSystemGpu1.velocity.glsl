@@ -442,7 +442,7 @@ void main() {
 	float v_POLY_distance1_val = distance(v_POLY_null2_val, v_POLY_cursor_val);
 	
 	// /particles1/particlesSystemGpu1/multScalar2
-	vec3 v_POLY_multScalar2_val = (10.0*v_POLY_easing3_out);
+	vec3 v_POLY_multScalar2_val = (30.0*v_POLY_easing3_out);
 	
 	// /particles1/particlesSystemGpu1/random1
 	float v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);

@@ -33,8 +33,7 @@
 						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					},
-					"overriden_options": {}
+					}
 				},
 				"force": {
 					"type": "vector3",
@@ -1386,7 +1385,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 10
+					"raw_input": 30
 				}
 			},
 			"inputs": [
@@ -1632,8 +1631,7 @@
 						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					},
-					"overriden_options": {}
+					}
 				}
 			},
 			"maxInputsCount": 4,
@@ -1758,7 +1756,7 @@
 				"cook": false,
 				"dependentOnFoundNode": true
 			},
-			"raw_input": [-1.059942105718493, -0.37993386057250494, 0],
+			"raw_input": [-1.1349913960231304, -0.2476303266270491, 0],
 			"overriden_options": {
 				"callback": "{}"
 			}
@@ -1936,7 +1934,7 @@
 				},
 				"v_POLY_param_cursor": {
 					"type": "v3",
-					"value": [-1.059942105718493, -0.37993386057250494, 0]
+					"value": [-1.1349913960231304, -0.2476303266270491, 0]
 				},
 				"v_POLY_param_velocity": {
 					"type": "v3",

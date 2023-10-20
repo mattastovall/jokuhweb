@@ -2,7 +2,6 @@ import { ParamValueSerializedTypeMap } from "@polygonjs/polygonjs/dist/src/engin
 
 import { PolyScene } from "@polygonjs/polygonjs/dist/src/engine/scene/PolyScene";
 // obj
-import { AmbientLightObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/AmbientLight";
 import { GeoObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo";
 // sop
 import { ActorSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Actor";
@@ -30,7 +29,6 @@ import { MeshBasicBuilderMatNode } from "@polygonjs/polygonjs/dist/src/engine/no
 import { PointsBuilderMatNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/mat/PointsBuilder";
 
 export class PolySceneWithNodeMap_jokuh_web extends PolyScene {
-  node(path: "/ambientLight1"): AmbientLightObjNode;
   node(path: "/particles1"): GeoObjNode;
   node(path: "/particles1/instance1"): InstanceSopNode;
   node(path: "/particles1/restAttributes1"): RestAttributesSopNode;
@@ -51,6 +49,7 @@ export class PolySceneWithNodeMap_jokuh_web extends PolyScene {
   node(path: "/particles1/point1"): PointSopNode;
   node(path: "/particles1/resample1"): ResampleSopNode;
   node(path: "/particles1/noise1"): NoiseSopNode;
+  node(path: "/particles1/curveGetPoint1"): CurveGetPointSopNode;
   node(path: "/particles1/MAT"): MaterialsNetworkSopNode;
   node(
     path: "/particles1/MAT/meshBasicBuilder_INSTANCES"
@@ -62,7 +61,6 @@ export class PolySceneWithNodeMap_jokuh_web extends PolyScene {
   node(path: "/particles1/actor_particles1"): ActorSopNode;
   node(path: "/particles1/particlesSystemGpu1"): ParticlesSystemGpuSopNode;
   node(path: "/particles1/actor4"): ActorSopNode;
-  node(path: "/particles1/curveGetPoint1"): CurveGetPointSopNode;
   node(path: "/cameras2"): GeoObjNode;
   node(path: "/cameras2/perspectiveCamera1"): PerspectiveCameraSopNode;
   node(
@@ -73,15 +71,6 @@ export class PolySceneWithNodeMap_jokuh_web extends PolyScene {
 }
 
 export interface PolySceneProps_jokuh_web {
-  "ambientLight1--color"?: ParamValueSerializedTypeMap["color"];
-  "ambientLight1--color-colorr"?: ParamValueSerializedTypeMap["float"];
-  "ambientLight1--color-colorg"?: ParamValueSerializedTypeMap["float"];
-  "ambientLight1--color-colorb"?: ParamValueSerializedTypeMap["float"];
-  "ambientLight1--colorr"?: ParamValueSerializedTypeMap["float"];
-  "ambientLight1--colorg"?: ParamValueSerializedTypeMap["float"];
-  "ambientLight1--colorb"?: ParamValueSerializedTypeMap["float"];
-  "ambientLight1--intensity"?: ParamValueSerializedTypeMap["float"];
-  "ambientLight1--name"?: ParamValueSerializedTypeMap["string"];
   "particles1--transform"?: ParamValueSerializedTypeMap["folder"];
   "particles1--keepPosWhenParenting"?: ParamValueSerializedTypeMap["boolean"];
   "particles1--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
@@ -414,6 +403,12 @@ export interface PolySceneProps_jokuh_web {
   "particles1-noise1--restN"?: ParamValueSerializedTypeMap["string"];
   "particles1-noise1--operation"?: ParamValueSerializedTypeMap["integer"];
   "particles1-noise1--computeNormals"?: ParamValueSerializedTypeMap["boolean"];
+  "particles1-curveGetPoint1--t"?: ParamValueSerializedTypeMap["float"];
+  "particles1-curveGetPoint1--closed"?: ParamValueSerializedTypeMap["boolean"];
+  "particles1-curveGetPoint1--curveType"?: ParamValueSerializedTypeMap["integer"];
+  "particles1-curveGetPoint1--tension"?: ParamValueSerializedTypeMap["float"];
+  "particles1-curveGetPoint1--tTangent"?: ParamValueSerializedTypeMap["boolean"];
+  "particles1-curveGetPoint1--tangentName"?: ParamValueSerializedTypeMap["string"];
   "particles1-MAT-meshBasicBuilder_INSTANCES--default"?: ParamValueSerializedTypeMap["folder"];
   "particles1-MAT-meshBasicBuilder_INSTANCES--transparent"?: ParamValueSerializedTypeMap["boolean"];
   "particles1-MAT-meshBasicBuilder_INSTANCES--opacity"?: ParamValueSerializedTypeMap["float"];
@@ -562,12 +557,6 @@ export interface PolySceneProps_jokuh_web {
   "particles1-actor4--switch_key"?: ParamValueSerializedTypeMap["float"];
   "particles1-actor4--xime"?: ParamValueSerializedTypeMap["float"];
   "particles1-actor4--vel_mult"?: ParamValueSerializedTypeMap["float"];
-  "particles1-curveGetPoint1--t"?: ParamValueSerializedTypeMap["float"];
-  "particles1-curveGetPoint1--closed"?: ParamValueSerializedTypeMap["boolean"];
-  "particles1-curveGetPoint1--curveType"?: ParamValueSerializedTypeMap["integer"];
-  "particles1-curveGetPoint1--tension"?: ParamValueSerializedTypeMap["float"];
-  "particles1-curveGetPoint1--tTangent"?: ParamValueSerializedTypeMap["boolean"];
-  "particles1-curveGetPoint1--tangentName"?: ParamValueSerializedTypeMap["string"];
   "cameras2--transform"?: ParamValueSerializedTypeMap["folder"];
   "cameras2--keepPosWhenParenting"?: ParamValueSerializedTypeMap["boolean"];
   "cameras2--rotationOrder"?: ParamValueSerializedTypeMap["integer"];

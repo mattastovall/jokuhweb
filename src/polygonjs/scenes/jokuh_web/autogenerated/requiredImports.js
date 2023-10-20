@@ -2,7 +2,6 @@
 import { MeshBasicBuilderMatNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/mat/MeshBasicBuilder";
 import { PointsBuilderMatNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/mat/PointsBuilder";
 // obj
-import { AmbientLightObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/AmbientLight";
 import { GeoObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo";
 // sop
 import { ActorSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Actor";
@@ -58,7 +57,6 @@ export const requiredImports_jokuh_web = {
   nodes: [
     MeshBasicBuilderMatNode,
     PointsBuilderMatNode,
-    AmbientLightObjNode,
     GeoObjNode,
     ActorSopNode,
     CircleSopNode,

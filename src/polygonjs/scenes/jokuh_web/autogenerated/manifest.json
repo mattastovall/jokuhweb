@@ -1,15 +1,15 @@
 {
-	"properties": "1697833881377",
-	"root": "1697822319282",
+	"properties": "1697836078651",
+	"root": "1697835937670",
 	"nodes": {
-		"particles1": "1697833872894",
+		"particles1": "1697835883013",
 		"particles1/MAT": "1697822319282",
 		"particles1/MAT/meshBasicBuilder_INSTANCES": "1697822319282",
-		"particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES": "1697822319282",
+		"particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES": "1697835883013",
 		"particles1/MAT/pointsParticles": "1697822319282",
 		"particles1/actor_particles1": "1697822319282",
-		"particles1/particlesSystemGpu1": "1697833881377",
-		"particles1/actor4": "1697833881377",
+		"particles1/particlesSystemGpu1": "1697836078651",
+		"particles1/actor4": "1697836078651",
 		"cameras2": "1697822319282"
 	},
 	"shaders": {

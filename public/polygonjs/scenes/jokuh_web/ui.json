@@ -1,10 +1,7 @@
 {
 	"nodes": {
-		"ambientLight1": {
-			"pos": [500, -200]
-		},
 		"particles1": {
-			"pos": [300, -250],
+			"pos": [200, -250],
 			"nodes": {
 				"instance1": {
 					"pos": [-450, 700]
@@ -13,7 +10,7 @@
 					"pos": [-250, 650]
 				},
 				"sphere1": {
-					"pos": [-600, 500]
+					"pos": [-800, 450]
 				},
 				"point2": {
 					"pos": [-50, 500]
@@ -61,11 +58,13 @@
 					"pos": [0, 900]
 				},
 				"noise1": {
-					"pos": [-50, 1000]
+					"pos": [-50, 1050]
+				},
+				"curveGetPoint1": {
+					"pos": [-250, 1150]
 				},
 				"MAT": {
 					"pos": [-650, 700],
-					"selection": ["meshBasicBuilder_INSTANCES"],
 					"nodes": {
 						"meshBasicBuilder_INSTANCES": {
 							"pos": [0, 0],
@@ -119,6 +118,7 @@
 						},
 						"meshBasicBuilder_INSTANCES_PARTICLES": {
 							"pos": [0, 100],
+							"selection": ["constant1"],
 							"nodes": {
 								"attribute1": {
 									"pos": [-800, 300]
@@ -142,7 +142,7 @@
 									"pos": [-600, 50]
 								},
 								"floatToVec3_1": {
-									"pos": [0, 350]
+									"pos": [50, 450]
 								},
 								"floatToVec3_2": {
 									"pos": [-150, 50]
@@ -154,7 +154,7 @@
 									"pos": [-850, -150]
 								},
 								"hsvToRgb1": {
-									"pos": [100, 300]
+									"pos": [250, 300]
 								},
 								"instanceTransform1": {
 									"pos": [50, 0]
@@ -169,7 +169,7 @@
 									"pos": [-400, 50]
 								},
 								"random1": {
-									"pos": [-250, 300]
+									"pos": [-250, 200]
 								},
 								"random2": {
 									"pos": [-500, 50]
@@ -184,10 +184,13 @@
 									"pos": [-300, 450]
 								},
 								"divide1": {
-									"pos": [-150, 450]
+									"pos": [-200, 400]
 								},
 								"mult1": {
-									"pos": [-150, 250]
+									"pos": [-100, 250]
+								},
+								"constant1": {
+									"pos": [50, 600]
 								}
 							}
 						},
@@ -358,17 +361,9 @@
 				},
 				"actor4": {
 					"pos": [-650, 1200],
-					"selection": [
-						"getObject1",
-						"getObjectUserData1",
-						"catmullRomCurve3GetPoint1",
-						"onTick3",
-						"multAdd1",
-						"mod1"
-					],
 					"nodes": {
 						"onKey2": {
-							"pos": [-1250, -450]
+							"pos": [-1850, -650]
 						},
 						"onTick2": {
 							"pos": [-1800, -300]
@@ -534,16 +529,19 @@
 						},
 						"vel_mult": {
 							"pos": [-800, -100]
+						},
+						"onKey3": {
+							"pos": [-2200, -500]
+						},
+						"pressButtonParam1": {
+							"pos": [-2150, -650]
 						}
 					}
-				},
-				"curveGetPoint1": {
-					"pos": [-250, 1150]
 				}
 			}
 		},
 		"cameras2": {
-			"pos": [300, -100],
+			"pos": [100, -100],
 			"nodes": {
 				"perspectiveCamera1": {
 					"pos": [0, -50]

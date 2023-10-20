@@ -2583,6 +2583,16 @@
 					}
 				]
 			}
+		},
+		"onKey3": {
+			"type": "onKey",
+			"params": {
+				"keyCodes": "Enter"
+			}
+		},
+		"pressButtonParam1": {
+			"type": "pressButtonParam",
+			"maxInputsCount": 2
 		}
 	},
 	"params": {
@@ -2618,7 +2628,7 @@
 				"computeOnDirty": true,
 				"cook": false
 			},
-			"raw_input": 49.814966666679595,
+			"raw_input": 3773.094033333321,
 			"overriden_options": {
 				"callback": "{}"
 			}
@@ -2732,6 +2742,16 @@
 			}
 		],
 		"eventDatas": [
+			{
+				"type": "keydown",
+				"emitter": "canvas",
+				"jsType": "onKey"
+			},
+			{
+				"type": "keyup",
+				"emitter": "canvas",
+				"jsType": "onKey"
+			},
 			{
 				"type": "keydown",
 				"emitter": "canvas",
