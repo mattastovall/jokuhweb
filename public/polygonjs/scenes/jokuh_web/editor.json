@@ -18,8 +18,8 @@
 							"initLayoutData": {
 								"camera": {
 									"position": {
-										"x": -550,
-										"y": 100
+										"x": -200,
+										"y": 125
 									},
 									"zoom": 1
 								},
@@ -157,6 +157,13 @@
 										},
 										"zoom": 1
 									},
+									"480": {
+										"position": {
+											"x": 0,
+											"y": 0
+										},
+										"zoom": 1
+									},
 									"484": {
 										"position": {
 											"x": -150,
@@ -203,6 +210,13 @@
 										"position": {
 											"x": 600,
 											"y": -775
+										},
+										"zoom": 1
+									},
+									"552": {
+										"position": {
+											"x": -50,
+											"y": -600
 										},
 										"zoom": 1
 									},
@@ -343,7 +357,7 @@
 					"panelTypes": ["network", "viewer", "params"],
 					"currentPanelIndex": 2,
 					"panel_data": {
-						"active_folder": 53,
+						"active_folder": 555,
 						"linkIndex": 1
 					}
 				},
@@ -364,23 +378,23 @@
 			"panel_data": {
 				"camera": {
 					"position": {
-						"x": -177.95479856661103,
-						"y": 121.64722615980102
+						"x": -133.31290915419333,
+						"y": 13.176621207493554
 					},
-					"zoom": 0.9566240463107655
+					"zoom": 0.8593635948046915
 				},
 				"history": {
 					"2": {
 						"position": {
-							"x": -177.95479856661103,
-							"y": 121.64722615980102
+							"x": 67.38070440117923,
+							"y": 152.6836900409188
 						},
-						"zoom": 0.9566240463107655
+						"zoom": 1.181017341124402
 					},
 					"36": {
 						"position": {
-							"x": 34.83263952318632,
-							"y": -1037.076078939538
+							"x": 222.5545309645089,
+							"y": -989.7979430520302
 						},
 						"zoom": 0.6276211921800005
 					},
@@ -503,6 +517,13 @@
 						},
 						"zoom": 0.6276211921800003
 					},
+					"480": {
+						"position": {
+							"x": -114.9299384826288,
+							"y": -26.118364061567547
+						},
+						"zoom": 1.3122000000000014
+					},
 					"484": {
 						"position": {
 							"x": -150,
@@ -512,10 +533,10 @@
 					},
 					"491": {
 						"position": {
-							"x": -206.77387070950218,
-							"y": -153.96408452435247
+							"x": -133.31290915419333,
+							"y": 13.176621207493554
 						},
-						"zoom": 0.7748409780000022
+						"zoom": 0.8593635948046915
 					},
 					"492": {
 						"position": {
@@ -526,8 +547,8 @@
 					},
 					"500": {
 						"position": {
-							"x": 276.83539353067886,
-							"y": -650.0156781904685
+							"x": 1656.89270903425,
+							"y": 490.5155378572821
 						},
 						"zoom": 0.6266935707372525
 					},
@@ -551,6 +572,13 @@
 							"y": 460.74501422377415
 						},
 						"zoom": 0.9565938000000012
+					},
+					"552": {
+						"position": {
+							"x": -127.58165161570884,
+							"y": -724.5853058473938
+						},
+						"zoom": 1.0628820000000017
 					},
 					"563": {
 						"position": {
@@ -685,30 +713,30 @@
 		},
 		"split_mode": "horizontal"
 	},
-	"currentNodes": ["/", "/", "/", "/", "/", "/", "/", "/"],
+	"currentNodes": ["/particles1/particlesSystemGpu1", "/", "/", "/", "/", "/", "/", "/"],
 	"navigationHistory": {
 		"nodePaths": {
 			"1": [
 				"/particles1",
-				"/particles1/actor4",
+				"/particles1/particlesSystemGpu1",
+				"/particles1",
+				"/particles1/particlesSystemGpu1",
 				"/particles1",
 				"/",
+				"/particles1",
+				"/particles1/particlesSystemGpu1",
+				"/particles1",
+				"/",
+				"/particles1",
+				"/particles1/particlesSystemGpu1",
 				"/particles1",
 				"/particles1/MAT",
 				"/particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES",
 				"/particles1/MAT",
 				"/particles1",
-				"/",
+				"/particles1/particlesSystemGpu1",
 				"/particles1",
-				"/particles1/MAT",
-				"/particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES",
-				"/particles1/MAT",
-				"/particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES",
-				"/particles1/MAT",
-				"/particles1",
-				"/",
-				"/particles1",
-				"/"
+				"/particles1/particlesSystemGpu1"
 			],
 			"2": ["/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/"],
 			"3": ["/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/"],

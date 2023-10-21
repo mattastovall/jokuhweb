@@ -393,14 +393,16 @@ uniform sampler2D v_POLY_ramp_ramp1;
 // /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/instanceTransform1
 uniform sampler2D texture_instancePosition_x_state;
 
-// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/instanceTransform1
+// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute3
 varying vec2 particlesSimUvVarying;
 
 // /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute2
 attribute float idn;
 
-// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/instanceTransform1
+// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute3
 attribute vec2 particlesSimUv;
+
+// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/instanceTransform1
 attribute vec4 instanceQuaternion;
 
 
@@ -423,6 +425,9 @@ void main() {
 
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute2
 	float v_POLY_attribute2_val = idn;
+	
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute3
+	particlesSimUvVarying = particlesSimUv;
 	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/floatToVec2_2
 	vec2 v_POLY_floatToVec2_2_vec2 = vec2(v_POLY_attribute2_val, 0.0);

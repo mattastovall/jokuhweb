@@ -30,20 +30,23 @@
 					"default_value": 1,
 					"options": {
 						"spare": true,
-						"editable": false,
+						"editable": true,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					}
+					},
+					"raw_input": 0.1,
+					"overriden_options": {}
 				},
 				"force": {
 					"type": "vector3",
 					"default_value": [0, 0, 0],
 					"options": {
 						"spare": true,
-						"editable": true,
+						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					}
+					},
+					"overriden_options": {}
 				}
 			},
 			"inputs": [
@@ -59,10 +62,11 @@
 					"node": "noise1",
 					"output": "noise"
 				},
+				null,
 				{
-					"index": 2,
-					"inputName": "mass",
-					"node": "noise2",
+					"index": 3,
+					"inputName": "force",
+					"node": "noise4",
 					"output": "noise"
 				}
 			],
@@ -401,7 +405,8 @@
 					"options": {
 						"spare": true,
 						"editable": true
-					}
+					},
+					"raw_input": 2
 				}
 			},
 			"inputs": [
@@ -807,8 +812,8 @@
 				{
 					"index": 2,
 					"inputName": "blend",
-					"node": "multAdd2",
-					"output": "val"
+					"node": "easing4",
+					"output": "out"
 				}
 			],
 			"connection_points": {
@@ -932,7 +937,7 @@
 						"spare": true,
 						"editable": true
 					},
-					"raw_input": 0.06
+					"raw_input": 0.04
 				},
 				"postAdd": {
 					"type": "float",
@@ -1162,7 +1167,9 @@
 					"default_value": 0,
 					"options": {
 						"spare": true,
-						"editable": false
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
 					}
 				},
 				"sub1": {
@@ -1170,17 +1177,36 @@
 					"default_value": 0,
 					"options": {
 						"spare": true,
-						"editable": true
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
 					},
-					"raw_input": 0.01
+					"raw_input": 0.11
+				},
+				"sub2": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
 				}
 			},
+			"maxInputsCount": 3,
 			"inputs": [
 				{
 					"index": 0,
 					"inputName": "sub0",
 					"node": "add2",
 					"output": "sum"
+				},
+				{
+					"index": 1,
+					"inputName": "sub1",
+					"node": "vec3ToFloat2",
+					"output": "x"
 				}
 			],
 			"connection_points": {
@@ -1191,6 +1217,10 @@
 					},
 					{
 						"name": "sub1",
+						"type": "float"
+					},
+					{
+						"name": "sub2",
 						"type": "float"
 					}
 				],
@@ -1381,11 +1411,12 @@
 					"default_value": 1,
 					"options": {
 						"spare": true,
-						"editable": true,
+						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 30
+					"raw_input": 30,
+					"overriden_options": {}
 				}
 			},
 			"inputs": [
@@ -1394,6 +1425,12 @@
 					"inputName": "value",
 					"node": "easing3",
 					"output": "out"
+				},
+				{
+					"index": 1,
+					"inputName": "mult",
+					"node": "noise2",
+					"output": "noise"
 				}
 			],
 			"connection_points": {
@@ -1433,11 +1470,12 @@
 					"default_value": 1,
 					"options": {
 						"spare": true,
-						"editable": false,
+						"editable": true,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 6
+					"raw_input": 6,
+					"overriden_options": {}
 				}
 			},
 			"inputs": [
@@ -1446,12 +1484,6 @@
 					"inputName": "value",
 					"node": "mix1",
 					"output": "mix"
-				},
-				{
-					"index": 1,
-					"inputName": "mult",
-					"node": "noise2",
-					"output": "noise"
 				}
 			],
 			"connection_points": {
@@ -1600,7 +1632,8 @@
 						"editable": true,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					}
+					},
+					"overriden_options": {}
 				},
 				"position": {
 					"type": "vector3",
@@ -1620,8 +1653,7 @@
 						"editable": true,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					},
-					"raw_input": [50, 50, 50]
+					}
 				},
 				"offset": {
 					"type": "vector3",
@@ -1742,10 +1774,268 @@
 		},
 		"random3": {
 			"type": "random"
+		},
+		"vec3ToFloat2": {
+			"type": "vec3ToFloat",
+			"params": {
+				"vec": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "vec",
+					"node": "vel_pos",
+					"output": "val"
+				}
+			]
+		},
+		"easing4": {
+			"type": "easing",
+			"params": {
+				"type": 4,
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "multAdd2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "out",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"noise3": {
+			"type": "noise",
+			"params": {
+				"octaves": 5,
+				"ampAttenuation": 0.88,
+				"freqIncrease": 8,
+				"amp": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": [5, 5, 5]
+				},
+				"position": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"freq": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": [50, 50, 50]
+				},
+				"offset": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 4,
+			"connection_points": {
+				"in": [
+					{
+						"name": "amp",
+						"type": "vec3"
+					},
+					{
+						"name": "position",
+						"type": "vec3"
+					},
+					{
+						"name": "freq",
+						"type": "vec3"
+					},
+					{
+						"name": "offset",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "noise",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"subtract2": {
+			"type": "subtract",
+			"params": {
+				"sub0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"overriden_options": {}
+				},
+				"sub1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "sub0",
+					"node": "easing4",
+					"output": "out"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "sub0",
+						"type": "float"
+					},
+					{
+						"name": "sub1",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "subtract",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"noise4": {
+			"type": "noise",
+			"params": {
+				"octaves": 1,
+				"freqIncrease": 7.2,
+				"amp": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"position": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"freq": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"offset": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 4,
+			"connection_points": {
+				"in": [
+					{
+						"name": "amp",
+						"type": "vec3"
+					},
+					{
+						"name": "position",
+						"type": "vec3"
+					},
+					{
+						"name": "freq",
+						"type": "vec3"
+					},
+					{
+						"name": "offset",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "noise",
+						"type": "vec3"
+					}
+				]
+			}
 		}
 	},
 	"params": {
-		"preRollFramesCount": 29,
+		"preRollFramesCount": 12,
 		"material": "../MAT/meshBasicBuilder_INSTANCES_PARTICLES",
 		"cursor": {
 			"type": "vector3",
@@ -1756,7 +2046,7 @@
 				"cook": false,
 				"dependentOnFoundNode": true
 			},
-			"raw_input": [-1.1349913960231304, -0.2476303266270491, 0],
+			"raw_input": [-1.2699670557410099, 0.007896347824338568, 0],
 			"overriden_options": {
 				"callback": "{}"
 			}
@@ -1790,15 +2080,19 @@
 						"value": 1
 					},
 					{
-						"position": 0.05823738279745609,
-						"value": 0.8792293443273499
+						"position": 0.09566309181422462,
+						"value": 0.87297916610438
 					},
 					{
-						"position": 0.3445301380753664,
-						"value": 0.3667147300438196
+						"position": 0.12867228990761925,
+						"value": 0.6792236411923139
 					},
 					{
-						"position": 0.4698982351069943,
+						"position": 0.1924881951947444,
+						"value": 0.29796276959115053
+					},
+					{
+						"position": 0.25937862188767136,
 						"value": 0
 					}
 				]
@@ -1934,7 +2228,7 @@
 				},
 				"v_POLY_param_cursor": {
 					"type": "v3",
-					"value": [-1.1349913960231304, -0.2476303266270491, 0]
+					"value": [-1.2699670557410099, 0.007896347824338568, 0]
 				},
 				"v_POLY_param_velocity": {
 					"type": "v3",

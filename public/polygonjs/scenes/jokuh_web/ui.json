@@ -1,7 +1,8 @@
 {
 	"nodes": {
 		"particles1": {
-			"pos": [200, -250],
+			"pos": [-100, -200],
+			"selection": ["particlesSystemGpu1"],
 			"nodes": {
 				"instance1": {
 					"pos": [-450, 700]
@@ -65,6 +66,7 @@
 				},
 				"MAT": {
 					"pos": [-650, 700],
+					"selection": ["meshBasicBuilder_INSTANCES_PARTICLES"],
 					"nodes": {
 						"meshBasicBuilder_INSTANCES": {
 							"pos": [0, 0],
@@ -118,7 +120,6 @@
 						},
 						"meshBasicBuilder_INSTANCES_PARTICLES": {
 							"pos": [0, 100],
-							"selection": ["constant1"],
 							"nodes": {
 								"attribute1": {
 									"pos": [-800, 300]
@@ -127,10 +128,10 @@
 									"pos": [-750, 50]
 								},
 								"attribute3": {
-									"pos": [-500, 600]
+									"pos": [-700, 600]
 								},
 								"complement1": {
-									"pos": [-350, 700]
+									"pos": [-450, 750]
 								},
 								"fitFrom01_1": {
 									"pos": [-300, 50]
@@ -154,7 +155,7 @@
 									"pos": [-850, -150]
 								},
 								"hsvToRgb1": {
-									"pos": [250, 300]
+									"pos": [650, 450]
 								},
 								"instanceTransform1": {
 									"pos": [50, 0]
@@ -163,7 +164,7 @@
 									"pos": [-650, 300]
 								},
 								"output1": {
-									"pos": [300, 0]
+									"pos": [500, 0]
 								},
 								"ramp1": {
 									"pos": [-400, 50]
@@ -175,10 +176,10 @@
 									"pos": [-500, 50]
 								},
 								"round1": {
-									"pos": [-500, 300]
+									"pos": [-550, 300]
 								},
 								"rgbToHsv1": {
-									"pos": [0, 200]
+									"pos": [200, 250]
 								},
 								"exp1": {
 									"pos": [-300, 450]
@@ -190,7 +191,25 @@
 									"pos": [-100, 250]
 								},
 								"constant1": {
-									"pos": [50, 600]
+									"pos": [50, 700]
+								},
+								"attribute4": {
+									"pos": [-650, -250]
+								},
+								"vec3ToFloat1": {
+									"pos": [-150, 700]
+								},
+								"multAdd2": {
+									"pos": [400, 600]
+								},
+								"multScalar1": {
+									"pos": [-50, 550]
+								},
+								"clamp1": {
+									"pos": [150, 550]
+								},
+								"multAdd3": {
+									"pos": [250, 450]
 								}
 							}
 						},
@@ -232,7 +251,7 @@
 					"pos": [-650, 1000],
 					"nodes": {
 						"acceleration1": {
-							"pos": [400, -750]
+							"pos": [500, -750]
 						},
 						"add2": {
 							"pos": [150, 500]
@@ -259,7 +278,7 @@
 							"pos": [500, 500]
 						},
 						"complement1": {
-							"pos": [550, 100]
+							"pos": [450, 50]
 						},
 						"distance1": {
 							"pos": [-350, -50]
@@ -283,7 +302,7 @@
 							"pos": [0, -600]
 						},
 						"mix2": {
-							"pos": [700, -600]
+							"pos": [800, -600]
 						},
 						"mult1": {
 							"pos": [200, -50]
@@ -301,7 +320,7 @@
 							"pos": [-500, -200]
 						},
 						"ramp1": {
-							"pos": [-100, -50]
+							"pos": [-250, 50]
 						},
 						"random1": {
 							"pos": [-150, 200]
@@ -310,7 +329,7 @@
 							"pos": [-250, 350]
 						},
 						"subtract1": {
-							"pos": [350, 500]
+							"pos": [300, 500]
 						},
 						"cursor": {
 							"pos": [-600, 0]
@@ -325,13 +344,13 @@
 							"pos": [-50, -300]
 						},
 						"noise1": {
-							"pos": [300, -550]
+							"pos": [250, -550]
 						},
 						"vel_pos": {
-							"pos": [-300, -450]
+							"pos": [-300, -400]
 						},
 						"multScalar2": {
-							"pos": [-100, -500]
+							"pos": [-100, -450]
 						},
 						"multScalar3": {
 							"pos": [150, -650]
@@ -340,13 +359,13 @@
 							"pos": [800, -750]
 						},
 						"easing2": {
-							"pos": [400, -450]
+							"pos": [350, -450]
 						},
 						"easing3": {
 							"pos": [-200, -500]
 						},
 						"noise2": {
-							"pos": [100, -450]
+							"pos": [50, -150]
 						},
 						"vel_mult": {
 							"pos": [150, -300]
@@ -356,6 +375,21 @@
 						},
 						"random3": {
 							"pos": [500, -550]
+						},
+						"vec3ToFloat2": {
+							"pos": [-100, -200]
+						},
+						"easing4": {
+							"pos": [750, -200]
+						},
+						"noise3": {
+							"pos": [400, -550]
+						},
+						"subtract2": {
+							"pos": [1000, -300]
+						},
+						"noise4": {
+							"pos": [250, -700]
 						}
 					}
 				},
@@ -541,7 +575,7 @@
 			}
 		},
 		"cameras2": {
-			"pos": [100, -100],
+			"pos": [-50, -50],
 			"nodes": {
 				"perspectiveCamera1": {
 					"pos": [0, -50]

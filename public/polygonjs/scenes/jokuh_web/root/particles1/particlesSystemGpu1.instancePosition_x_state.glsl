@@ -5,20 +5,7 @@
 
 
 
-// /particles1/particlesSystemGpu1/easing3
-#ifndef HALF_PI
-#define HALF_PI 1.5707963267948966
-#endif
-
-float elasticInOut(float t) {
-  return t < 0.5
-    ? 0.5 * sin(+13.0 * HALF_PI * 2.0 * t) * pow(2.0, 10.0 * (2.0 * t - 1.0))
-    : 0.5 * sin(-13.0 * HALF_PI * ((2.0 * t - 1.0) + 1.0)) * pow(2.0, -10.0 * (2.0 * t - 1.0)) + 1.0;
-}
-
-
-
-// /particles1/particlesSystemGpu1/noise2
+// /particles1/particlesSystemGpu1/noise4
 // Modulo 289 without a division (only multiplications)
 float mod289(float x) {
   return x - floor(x * (1.0 / 289.0)) * 289.0;
@@ -155,6 +142,33 @@ float snoise(vec3 v)
                                 dot(p2,x2), dot(p3,x3) ) );
   }
 
+
+float fbm_snoise_particles1_particlesSystemGpu1_noise4(in vec3 st) {
+	float value = 0.0;
+	float amplitude = 1.0;
+	for (int i = 0; i < 1; i++) {
+		value += amplitude * snoise(st);
+		st *= 7.2;
+		amplitude *= 0.5;
+	}
+	return value;
+}
+
+
+// /particles1/particlesSystemGpu1/easing3
+#ifndef HALF_PI
+#define HALF_PI 1.5707963267948966
+#endif
+
+float elasticInOut(float t) {
+  return t < 0.5
+    ? 0.5 * sin(+13.0 * HALF_PI * 2.0 * t) * pow(2.0, 10.0 * (2.0 * t - 1.0))
+    : 0.5 * sin(-13.0 * HALF_PI * ((2.0 * t - 1.0) + 1.0)) * pow(2.0, -10.0 * (2.0 * t - 1.0)) + 1.0;
+}
+
+
+
+// /particles1/particlesSystemGpu1/noise2
 
 float fbm_snoise_particles1_particlesSystemGpu1_noise2(in vec3 st) {
 	float value = 0.0;
@@ -345,6 +359,36 @@ vec4 posFromVel(vec4 position, vec4 velocity, float time_delta){
 	return position + (time_delta * velocity);
 }
 
+// /particles1/particlesSystemGpu1/easing4
+
+float bounceOut(float t) {
+  const float a = 4.0 / 11.0;
+  const float b = 8.0 / 11.0;
+  const float c = 9.0 / 10.0;
+
+  const float ca = 4356.0 / 361.0;
+  const float cb = 35442.0 / 1805.0;
+  const float cc = 16061.0 / 1805.0;
+
+  float t2 = t * t;
+
+  return t < a
+    ? 7.5625 * t2
+    : t < b
+      ? 9.075 * t2 - 9.9 * t + 3.4
+      : t < c
+        ? ca * t2 - cb * t + cc
+        : 10.8 * t * t - 20.52 * t + 10.72;
+}
+
+
+
+float bounceIn(float t) {
+  return 1.0 - bounceOut(1.0 - t);
+}
+
+
+
 
 
 
@@ -401,6 +445,12 @@ void main() {
 	// /particles1/particlesSystemGpu1/attribute3
 	float v_POLY_attribute3_val = texture2D( texture_restP_x_id, particleUv ).w;
 	
+	// /particles1/particlesSystemGpu1/noise4
+	float v_POLY_noise4_noisex = (vec3(1.0, 1.0, 1.0)*fbm_snoise_particles1_particlesSystemGpu1_noise4((vec3(0.0, 0.0, 0.0)*vec3(1.0, 1.0, 1.0))+(vec3(0.0, 0.0, 0.0)+vec3(0.0, 0.0, 0.0)))).x;
+	float v_POLY_noise4_noisey = (vec3(1.0, 1.0, 1.0)*fbm_snoise_particles1_particlesSystemGpu1_noise4((vec3(0.0, 0.0, 0.0)*vec3(1.0, 1.0, 1.0))+(vec3(0.0, 0.0, 0.0)+vec3(1000.0, 1000.0, 1000.0)))).y;
+	float v_POLY_noise4_noisez = (vec3(1.0, 1.0, 1.0)*fbm_snoise_particles1_particlesSystemGpu1_noise4((vec3(0.0, 0.0, 0.0)*vec3(1.0, 1.0, 1.0))+(vec3(0.0, 0.0, 0.0)+vec3(2000.0, 2000.0, 2000.0)))).z;
+	vec3 v_POLY_noise4_noise = vec3(v_POLY_noise4_noisex, v_POLY_noise4_noisey, v_POLY_noise4_noisez);
+	
 	// /particles1/particlesSystemGpu1/attribute4
 	vec3 v_POLY_attribute4_val = texture2D( texture_restP_x_id, particleUv ).xyz;
 	
@@ -420,8 +470,11 @@ void main() {
 	// /particles1/particlesSystemGpu1/easing3
 	vec3 v_POLY_easing3_out = vec3(elasticInOut(v_POLY_vel_pos_val.x), elasticInOut(v_POLY_vel_pos_val.y), elasticInOut(v_POLY_vel_pos_val.z));
 	
+	// /particles1/particlesSystemGpu1/vec3ToFloat2
+	float v_POLY_vec3ToFloat2_x = v_POLY_vel_pos_val.x;
+	
 	// /particles1/particlesSystemGpu1/noise2
-	float v_POLY_noise2_noise = 1.0*fbm_snoise_particles1_particlesSystemGpu1_noise2((vec3(0.0, 0.0, 0.0)*vec3(50.0, 50.0, 50.0))+v_POLY_cursor_val);
+	float v_POLY_noise2_noise = 1.0*fbm_snoise_particles1_particlesSystemGpu1_noise2((vec3(0.0, 0.0, 0.0)*vec3(1.0, 1.0, 1.0))+v_POLY_cursor_val);
 	
 	// /particles1/particlesSystemGpu1/floatToVec2_1
 	vec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_attribute3_val, 3.8);
@@ -433,7 +486,7 @@ void main() {
 	float v_POLY_distance1_val = distance(v_POLY_null2_val, v_POLY_cursor_val);
 	
 	// /particles1/particlesSystemGpu1/multScalar2
-	vec3 v_POLY_multScalar2_val = (30.0*v_POLY_easing3_out);
+	vec3 v_POLY_multScalar2_val = (v_POLY_noise2_noise*v_POLY_easing3_out);
 	
 	// /particles1/particlesSystemGpu1/random1
 	float v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);
@@ -457,13 +510,13 @@ void main() {
 	vec3 v_POLY_mix1_mix = mix(v_POLY_multScalar1_val, v_POLY_multScalar2_val, v_POLY_mult1_product);
 	
 	// /particles1/particlesSystemGpu1/subtract1
-	float v_POLY_subtract1_subtract = (v_POLY_add2_sum - 0.01);
+	float v_POLY_subtract1_subtract = (v_POLY_add2_sum - v_POLY_vec3ToFloat2_x - 0.0);
 	
 	// /particles1/particlesSystemGpu1/multScalar3
-	vec3 v_POLY_multScalar3_val = (v_POLY_noise2_noise*v_POLY_mix1_mix);
+	vec3 v_POLY_multScalar3_val = (6.0*v_POLY_mix1_mix);
 	
 	// /particles1/particlesSystemGpu1/clamp1
-	float v_POLY_clamp1_val = clamp(v_POLY_subtract1_subtract, 0.0, 1.0);
+	float v_POLY_clamp1_val = clamp(v_POLY_subtract1_subtract, 0.0, 2.0);
 	
 	// /particles1/particlesSystemGpu1/noise1
 	float v_POLY_noise1_noisex = (v_POLY_multScalar3_val*fbm_snoise_particles1_particlesSystemGpu1_noise1((vec3(0.0, 0.0, 0.0)*vec3(3.0, 3.0, 3.0))+(vec3(0.0, 0.0, 0.0)+vec3(0.0, 0.0, 0.0)))).x;
@@ -478,14 +531,17 @@ void main() {
 	gl_FragColor.w = v_POLY_clamp1_val;
 	
 	// /particles1/particlesSystemGpu1/acceleration1
-	vec3 v_POLY_acceleration1_velocity = velFromAccel(v_POLY_noise1_noise, vec3(0.0, 0.0, 0.0), v_POLY_noise2_noise, delta_time);
+	vec3 v_POLY_acceleration1_velocity = velFromAccel(v_POLY_noise1_noise, v_POLY_noise4_noise, 0.1, delta_time);
 	vec3 v_POLY_acceleration1_position = posFromVel(v_POLY_null1_val, v_POLY_acceleration1_velocity, delta_time);
 	
 	// /particles1/particlesSystemGpu1/multAdd2
-	float v_POLY_multAdd2_val = (0.06*(v_POLY_complement1_val + v_POLY_fitFrom01_1_val)) + 0.0;
+	float v_POLY_multAdd2_val = (0.04*(v_POLY_complement1_val + v_POLY_fitFrom01_1_val)) + 0.0;
+	
+	// /particles1/particlesSystemGpu1/easing4
+	float v_POLY_easing4_out = bounceIn(v_POLY_multAdd2_val);
 	
 	// /particles1/particlesSystemGpu1/mix2
-	vec3 v_POLY_mix2_mix = mix(v_POLY_acceleration1_position, v_POLY_attribute4_val, v_POLY_multAdd2_val);
+	vec3 v_POLY_mix2_mix = mix(v_POLY_acceleration1_position, v_POLY_attribute4_val, v_POLY_easing4_out);
 	
 	// /particles1/particlesSystemGpu1/attribute2
 	gl_FragColor.xyz = v_POLY_mix2_mix;

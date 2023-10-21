@@ -12,7 +12,23 @@ varying vec3 vWorldPosition;
 
 
 
-// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/instanceTransform1
+// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/complement1
+float complement(float x){return 1.0-x;}
+vec2 complement(vec2 x){return vec2(1.0-x.x, 1.0-x.y);}
+vec3 complement(vec3 x){return vec3(1.0-x.x, 1.0-x.y, 1.0-x.z);}
+vec4 complement(vec4 x){return vec4(1.0-x.x, 1.0-x.y, 1.0-x.z, 1.0-x.w);}
+
+
+
+
+
+
+
+
+// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute3
+uniform sampler2D texture_instancePosition_x_state;
+
+// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute3
 varying vec2 particlesSimUvVarying;
 
 
@@ -36,11 +52,32 @@ void main () {
 
 
 
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute3
+	float v_POLY_attribute3_val = texture2D( texture_instancePosition_x_state, particlesSimUvVarying ).w;
+	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/constant1
-	vec3 v_POLY_constant1_val = vec3(0.051269458367115384, 0.051269458367115384, 0.051269458367115384);
+	vec3 v_POLY_constant1_val = vec3(0.059511238155621766, 0.059511238155621766, 0.059511238155621766);
+	
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/complement1
+	float v_POLY_complement1_val = complement(v_POLY_attribute3_val);
+	
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/floatToVec3_3
+	vec3 v_POLY_floatToVec3_3_vec3 = vec3(v_POLY_attribute3_val, v_POLY_complement1_val, 0.0);
+	
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/vec3ToFloat1
+	float v_POLY_vec3ToFloat1_x = v_POLY_floatToVec3_3_vec3.x;
+	
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/multScalar1
+	vec3 v_POLY_multScalar1_val = (v_POLY_vec3ToFloat1_x*v_POLY_floatToVec3_3_vec3);
+	
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/clamp1
+	vec3 v_POLY_clamp1_val = clamp(v_POLY_multScalar1_val, vec3(0.0, 0.0, 0.0), vec3(10.0, 10.0, 10.0));
+	
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/multAdd2
+	vec3 v_POLY_multAdd2_val = (vec3(50.0, 50.0, 50.0)*(v_POLY_clamp1_val + vec3(0.0, 0.0, 0.0))) + v_POLY_constant1_val;
 	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/output1
-	diffuseColor.xyz = v_POLY_constant1_val;
+	diffuseColor.xyz = v_POLY_multAdd2_val;
 
 
 
