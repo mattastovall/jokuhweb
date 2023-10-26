@@ -78,7 +78,7 @@
 		"curveFromPoints1": {
 			"type": "curveFromPoints",
 			"params": {
-				"pointsCount": 43,
+				"pointsCount": 23,
 				"closed": 1,
 				"tension": 1
 			},
@@ -88,7 +88,9 @@
 			"type": "objectProperties",
 			"params": {
 				"tname": 1,
-				"name": "curve"
+				"name": "curve",
+				"tvisible": 1,
+				"visible": 0
 			},
 			"inputs": ["curveFromPoints1"]
 		},
@@ -99,12 +101,18 @@
 			"type": "objectProperties",
 			"params": {
 				"tname": 1,
-				"name": "debugObject"
+				"name": "debugObject",
+				"tvisible": 1,
+				"visible": 0
 			},
 			"inputs": ["circle1"]
 		},
 		"merge1": {
 			"type": "merge",
+			"params": {
+				"inputsCount": 3
+			},
+			"maxInputsCount": 3,
 			"inputs": ["actor4", "objectProperties1", "objectProperties2"],
 			"flags": {
 				"display": true
@@ -118,8 +126,7 @@
 			"params": {
 				"pointsCount": 129,
 				"seed": 11
-			},
-			"inputs": ["point1"]
+			}
 		},
 		"point1": {
 			"type": "point",
@@ -130,8 +137,7 @@
 			"params": {
 				"tension": 0,
 				"pointsCount": 112
-			},
-			"inputs": ["point1"]
+			}
 		},
 		"noise1": {
 			"type": "noise",
@@ -141,8 +147,7 @@
 				"offset": ["0+($F*0.001)", "0+($F*0.01)", 0],
 				"octaves": 1,
 				"freqIncrease": 3.2
-			},
-			"inputs": ["curveFromPoints1"]
+			}
 		},
 		"curveGetPoint1": {
 			"type": "curveGetPoint",

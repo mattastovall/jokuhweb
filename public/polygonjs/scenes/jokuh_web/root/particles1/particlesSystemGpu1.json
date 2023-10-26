@@ -34,8 +34,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 0.1,
-					"overriden_options": {}
+					"raw_input": 0.1
 				},
 				"force": {
 					"type": "vector3",
@@ -45,8 +44,7 @@
 						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					},
-					"overriden_options": {}
+					}
 				}
 			},
 			"inputs": [
@@ -1415,8 +1413,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 30,
-					"overriden_options": {}
+					"raw_input": 30
 				}
 			},
 			"inputs": [
@@ -1474,8 +1471,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 6,
-					"overriden_options": {}
+					"raw_input": 6
 				}
 			},
 			"inputs": [
@@ -1632,8 +1628,7 @@
 						"editable": true,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					},
-					"overriden_options": {}
+					}
 				},
 				"position": {
 					"type": "vector3",
@@ -1803,8 +1798,7 @@
 						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					},
-					"overriden_options": {}
+					}
 				}
 			},
 			"inputs": [
@@ -1918,8 +1912,7 @@
 						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					},
-					"overriden_options": {}
+					}
 				},
 				"sub1": {
 					"type": "float",
@@ -2046,7 +2039,7 @@
 				"cook": false,
 				"dependentOnFoundNode": true
 			},
-			"raw_input": [-1.2699670557410099, 0.007896347824338568, 0],
+			"raw_input": [0.6705303781713657, 0.3563207807188328, 0],
 			"overriden_options": {
 				"callback": "{}"
 			}
@@ -2228,7 +2221,7 @@
 				},
 				"v_POLY_param_cursor": {
 					"type": "v3",
-					"value": [-1.2699670557410099, 0.007896347824338568, 0]
+					"value": [0.6705303781713657, 0.3563207807188328, 0]
 				},
 				"v_POLY_param_velocity": {
 					"type": "v3",

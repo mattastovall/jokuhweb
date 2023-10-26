@@ -2,7 +2,7 @@
 	"nodes": {
 		"particles1": {
 			"pos": [-100, -200],
-			"selection": ["particlesSystemGpu1"],
+			"selection": ["merge1"],
 			"nodes": {
 				"instance1": {
 					"pos": [-450, 700]
@@ -35,7 +35,7 @@
 					"pos": [250, 900]
 				},
 				"objectProperties1": {
-					"pos": [100, 1150]
+					"pos": [150, 1150]
 				},
 				"circle1": {
 					"pos": [550, 950]
@@ -59,7 +59,7 @@
 					"pos": [0, 900]
 				},
 				"noise1": {
-					"pos": [-50, 1050]
+					"pos": [-200, 1050]
 				},
 				"curveGetPoint1": {
 					"pos": [-250, 1150]

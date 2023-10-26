@@ -1,16 +1,16 @@
 import { SceneDataManifestImporter } from "@polygonjs/polygonjs/dist/src/engine/io/manifest/import/SceneData";
 const manifest = {
-  properties: "1697903654560",
+  properties: "1698335366887",
   root: "1697835937670",
   nodes: {
-    particles1: "1697835883013",
+    particles1: "1698335358579",
     "particles1/MAT": "1697822319282",
     "particles1/MAT/meshBasicBuilder_INSTANCES": "1697822319282",
-    "particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES": "1697902885456",
+    "particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES": "1698335059345",
     "particles1/MAT/pointsParticles": "1697822319282",
     "particles1/actor_particles1": "1697822319282",
-    "particles1/particlesSystemGpu1": "1697903654560",
-    "particles1/actor4": "1697903654560",
+    "particles1/particlesSystemGpu1": "1698335366887",
+    "particles1/actor4": "1698335366887",
     cameras2: "1697822319282",
   },
   shaders: {

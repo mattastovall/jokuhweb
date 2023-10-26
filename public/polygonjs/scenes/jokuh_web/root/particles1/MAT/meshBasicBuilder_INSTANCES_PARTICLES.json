@@ -731,8 +731,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": [50, 50, 50],
-					"overriden_options": {}
+					"raw_input": [50, 50, 50]
 				},
 				"postAdd": {
 					"type": "vector3",
@@ -799,8 +798,7 @@
 						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					},
-					"overriden_options": {}
+					}
 				},
 				"mult": {
 					"type": "float",
@@ -811,8 +809,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 0.03,
-					"overriden_options": {}
+					"raw_input": 0.03
 				}
 			},
 			"inputs": [

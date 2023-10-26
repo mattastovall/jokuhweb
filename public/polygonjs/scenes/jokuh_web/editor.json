@@ -18,8 +18,8 @@
 							"initLayoutData": {
 								"camera": {
 									"position": {
-										"x": -200,
-										"y": 125
+										"x": -550,
+										"y": 100
 									},
 									"zoom": 1
 								},
@@ -357,7 +357,7 @@
 					"panelTypes": ["network", "viewer", "params"],
 					"currentPanelIndex": 2,
 					"panel_data": {
-						"active_folder": 555,
+						"active_folder": 42,
 						"linkIndex": 1
 					}
 				},
@@ -378,25 +378,25 @@
 			"panel_data": {
 				"camera": {
 					"position": {
-						"x": -133.31290915419333,
-						"y": 13.176621207493554
+						"x": 216.05176613453028,
+						"y": 179.71474920950294
 					},
-					"zoom": 0.8593635948046915
+					"zoom": 0.7748654775117202
 				},
 				"history": {
 					"2": {
 						"position": {
-							"x": 67.38070440117923,
-							"y": 152.6836900409188
+							"x": 216.05176613453028,
+							"y": 179.71474920950294
 						},
-						"zoom": 1.181017341124402
+						"zoom": 0.7748654775117202
 					},
 					"36": {
 						"position": {
-							"x": 222.5545309645089,
-							"y": -989.7979430520302
+							"x": -321.14279182473933,
+							"y": -1074.6204827555075
 						},
-						"zoom": 0.6276211921800005
+						"zoom": 0.6276211921800006
 					},
 					"47": {
 						"position": {
@@ -536,7 +536,7 @@
 							"x": -133.31290915419333,
 							"y": 13.176621207493554
 						},
-						"zoom": 0.8593635948046915
+						"zoom": 0.3329350641280315
 					},
 					"492": {
 						"position": {
@@ -713,16 +713,10 @@
 		},
 		"split_mode": "horizontal"
 	},
-	"currentNodes": ["/particles1/particlesSystemGpu1", "/", "/", "/", "/", "/", "/", "/"],
+	"currentNodes": ["/", "/", "/", "/", "/", "/", "/", "/"],
 	"navigationHistory": {
 		"nodePaths": {
 			"1": [
-				"/particles1",
-				"/particles1/particlesSystemGpu1",
-				"/particles1",
-				"/particles1/particlesSystemGpu1",
-				"/particles1",
-				"/",
 				"/particles1",
 				"/particles1/particlesSystemGpu1",
 				"/particles1",
@@ -736,7 +730,13 @@
 				"/particles1",
 				"/particles1/particlesSystemGpu1",
 				"/particles1",
-				"/particles1/particlesSystemGpu1"
+				"/particles1/particlesSystemGpu1",
+				"/particles1",
+				"/",
+				"/particles1",
+				"/",
+				"/particles1",
+				"/"
 			],
 			"2": ["/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/"],
 			"3": ["/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/"],
@@ -759,7 +759,7 @@
 	},
 	"fullscreenPanelId": null,
 	"saveOptions": {
-		"createExport": false,
+		"createExport": true,
 		"checkRemoteAssetsUse": true,
 		"minimizeFilesCount": false,
 		"compressJs": true,
