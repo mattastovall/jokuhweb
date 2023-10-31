@@ -2,7 +2,7 @@
 	"nodes": {
 		"particles1": {
 			"pos": [-100, -200],
-			"selection": ["merge1"],
+			"selection": ["scatter2"],
 			"nodes": {
 				"instance1": {
 					"pos": [-450, 700]
@@ -122,7 +122,7 @@
 							"pos": [0, 100],
 							"nodes": {
 								"attribute1": {
-									"pos": [-800, 300]
+									"pos": [-1000, 300]
 								},
 								"attribute2": {
 									"pos": [-750, 50]
@@ -137,79 +137,103 @@
 									"pos": [-300, 50]
 								},
 								"floatToVec2_1": {
-									"pos": [-350, 300]
+									"pos": [-500, 200]
 								},
 								"floatToVec2_2": {
 									"pos": [-600, 50]
 								},
 								"floatToVec3_1": {
-									"pos": [50, 450]
+									"pos": [-50, 400]
 								},
 								"floatToVec3_2": {
 									"pos": [-150, 50]
 								},
 								"floatToVec3_3": {
-									"pos": [-200, 600]
+									"pos": [-300, 600]
 								},
 								"globals1": {
 									"pos": [-850, -150]
 								},
 								"hsvToRgb1": {
-									"pos": [650, 450]
+									"pos": [1000, 300]
 								},
 								"instanceTransform1": {
 									"pos": [50, 0]
 								},
 								"multAdd1": {
-									"pos": [-650, 300]
+									"pos": [-800, 250]
 								},
 								"output1": {
-									"pos": [500, 0]
+									"pos": [900, 0]
 								},
 								"ramp1": {
 									"pos": [-400, 50]
 								},
 								"random1": {
-									"pos": [-250, 200]
+									"pos": [-350, 200]
 								},
 								"random2": {
 									"pos": [-500, 50]
 								},
 								"round1": {
-									"pos": [-550, 300]
+									"pos": [-650, 250]
 								},
 								"rgbToHsv1": {
-									"pos": [200, 250]
+									"pos": [100, 200]
 								},
 								"exp1": {
-									"pos": [-300, 450]
+									"pos": [-450, 350]
 								},
 								"divide1": {
-									"pos": [-200, 400]
+									"pos": [-400, 400]
 								},
 								"mult1": {
-									"pos": [-100, 250]
+									"pos": [-150, 200]
 								},
 								"constant1": {
-									"pos": [50, 700]
+									"pos": [250, 950]
 								},
 								"attribute4": {
 									"pos": [-650, -250]
 								},
 								"vec3ToFloat1": {
-									"pos": [-150, 700]
+									"pos": [-200, 700]
 								},
 								"multAdd2": {
-									"pos": [400, 600]
+									"pos": [300, 400]
 								},
 								"multScalar1": {
-									"pos": [-50, 550]
+									"pos": [-50, 600]
 								},
 								"clamp1": {
-									"pos": [150, 550]
+									"pos": [50, 500]
 								},
 								"multAdd3": {
-									"pos": [250, 450]
+									"pos": [150, 700]
+								},
+								"multAdd4": {
+									"pos": [400, 250]
+								},
+								"clamp2": {
+									"pos": [200, 300]
+								},
+								"clamp3": {
+									"pos": [650, 150]
+								},
+								"rgbToHsv2": {
+									"pos": [500, 400]
+								},
+								"clamp4": {
+									"pos": [650, 450]
+								},
+								"hsvToRgb2": {
+									"pos": [650, 300]
+								},
+								"random3": {
+									"pos": [-200, 450]
+								},
+								"random4": {
+									"pos": [-200, 350]
 								}
 							}
 						},

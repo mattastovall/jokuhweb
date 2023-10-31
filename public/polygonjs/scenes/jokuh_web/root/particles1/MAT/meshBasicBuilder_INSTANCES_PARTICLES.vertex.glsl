@@ -396,6 +396,9 @@ uniform sampler2D texture_instancePosition_x_state;
 // /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute3
 varying vec2 particlesSimUvVarying;
 
+// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute1
+varying float v_POLY_attribute_idn;
+
 // /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute2
 attribute float idn;
 
@@ -421,6 +424,9 @@ void main() {
 	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute3
 	particlesSimUvVarying = particlesSimUv;
+	
+	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/attribute1
+	v_POLY_attribute_idn = float(idn);
 	
 	// /particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES/floatToVec2_2
 	vec2 v_POLY_floatToVec2_2_vec2 = vec2(v_POLY_attribute2_val, 0.0);

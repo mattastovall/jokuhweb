@@ -157,7 +157,7 @@
 					"overriden_options": {}
 				},
 				"y": {
-					"raw_input": 0.1,
+					"raw_input": 1,
 					"overriden_options": {}
 				}
 			},
@@ -208,14 +208,14 @@
 				{
 					"index": 0,
 					"inputName": "x",
-					"node": "mult1",
-					"output": "product"
+					"node": "divide1",
+					"output": "divide"
 				},
 				{
 					"index": 1,
 					"inputName": "y",
-					"node": "exp1",
-					"output": "val"
+					"node": "divide1",
+					"output": "divide"
 				},
 				{
 					"index": 2,
@@ -294,7 +294,12 @@
 			"type": "globals"
 		},
 		"hsvToRgb1": {
-			"type": "hsvToRgb"
+			"type": "hsvToRgb",
+			"params": {
+				"hsv": {
+					"overriden_options": {}
+				}
+			}
 		},
 		"instanceTransform1": {
 			"type": "instanceTransform",
@@ -418,8 +423,8 @@
 				{
 					"index": 2,
 					"inputName": "color",
-					"node": "multAdd2",
-					"output": "val"
+					"node": "hsvToRgb2",
+					"output": "rgb"
 				}
 			]
 		},
@@ -507,7 +512,20 @@
 			}
 		},
 		"rgbToHsv1": {
-			"type": "rgbToHsv"
+			"type": "rgbToHsv",
+			"params": {
+				"rgb": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "rgb",
+					"node": "floatToVec3_1",
+					"output": "vec3"
+				}
+			]
 		},
 		"exp1": {
 			"type": "exp",
@@ -564,19 +582,37 @@
 					"default_value": 1,
 					"options": {
 						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 6
+				},
+				"div2": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
 						"editable": true,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 0
+					"raw_input": 100
 				}
 			},
+			"maxInputsCount": 3,
 			"inputs": [
 				{
 					"index": 0,
 					"inputName": "div0",
 					"node": "exp1",
 					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "div1",
+					"node": "random1",
+					"output": "rand"
 				}
 			],
 			"connection_points": {
@@ -587,6 +623,10 @@
 					},
 					{
 						"name": "div1",
+						"type": "float"
+					},
+					{
+						"name": "div2",
 						"type": "float"
 					}
 				],
@@ -616,19 +656,37 @@
 					"default_value": 1,
 					"options": {
 						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 3
+				},
+				"mult2": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
 						"editable": true,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": 0.12
+					"raw_input": 30
 				}
 			},
+			"maxInputsCount": 3,
 			"inputs": [
 				{
 					"index": 0,
 					"inputName": "mult0",
 					"node": "random1",
 					"output": "rand"
+				},
+				{
+					"index": 1,
+					"inputName": "mult1",
+					"node": "divide1",
+					"output": "divide"
 				}
 			],
 			"connection_points": {
@@ -639,6 +697,10 @@
 					},
 					{
 						"name": "mult1",
+						"type": "float"
+					},
+					{
+						"name": "mult2",
 						"type": "float"
 					}
 				],
@@ -717,10 +779,11 @@
 					"default_value": [0, 0, 0],
 					"options": {
 						"spare": true,
-						"editable": true,
+						"editable": false,
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
-					}
+					},
+					"overriden_options": {}
 				},
 				"mult": {
 					"type": "vector3",
@@ -731,7 +794,7 @@
 						"computeOnDirty": true,
 						"dependentOnFoundParam": false
 					},
-					"raw_input": [50, 50, 50]
+					"raw_input": [0.5, 0.5, 0]
 				},
 				"postAdd": {
 					"type": "vector3",
@@ -751,7 +814,12 @@
 					"node": "clamp1",
 					"output": "val"
 				},
-				null,
+				{
+					"index": 1,
+					"inputName": "preAdd",
+					"node": "multAdd3",
+					"output": "val"
+				},
 				null,
 				{
 					"index": 3,
@@ -989,6 +1057,324 @@
 						"type": "vec3"
 					}
 				]
+			}
+		},
+		"multAdd4": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"preAdd": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"overriden_options": {}
+				},
+				"mult": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": [0.5, 0.5, 0.5]
+				},
+				"postAdd": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "multAdd2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "preAdd",
+					"node": "clamp2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "vec3"
+					},
+					{
+						"name": "preAdd",
+						"type": "vec3"
+					},
+					{
+						"name": "mult",
+						"type": "vec3"
+					},
+					{
+						"name": "postAdd",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"clamp2": {
+			"type": "clamp",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"min": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"max": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "rgbToHsv1",
+					"output": "hsv"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "vec3"
+					},
+					{
+						"name": "min",
+						"type": "vec3"
+					},
+					{
+						"name": "max",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"clamp3": {
+			"type": "clamp",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"min": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"max": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.01
+				}
+			},
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "min",
+						"type": "float"
+					},
+					{
+						"name": "max",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"rgbToHsv2": {
+			"type": "rgbToHsv",
+			"params": {
+				"rgb": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "rgb",
+					"node": "multAdd4",
+					"output": "val"
+				}
+			]
+		},
+		"clamp4": {
+			"type": "clamp",
+			"params": {
+				"value": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"min": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"max": {
+					"type": "vector3",
+					"default_value": [1, 1, 1],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": [1, 0, 0.2]
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "rgbToHsv2",
+					"output": "hsv"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "vec3"
+					},
+					{
+						"name": "min",
+						"type": "vec3"
+					},
+					{
+						"name": "max",
+						"type": "vec3"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"hsvToRgb2": {
+			"type": "hsvToRgb",
+			"params": {
+				"hsv": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "hsv",
+					"node": "clamp4",
+					"output": "val"
+				}
+			]
+		},
+		"random3": {
+			"type": "random"
+		},
+		"random4": {
+			"type": "random",
+			"params": {
+				"seed": [3, 1]
 			}
 		}
 	},

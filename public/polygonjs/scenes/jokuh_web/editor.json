@@ -18,8 +18,8 @@
 							"initLayoutData": {
 								"camera": {
 									"position": {
-										"x": -550,
-										"y": 100
+										"x": 350,
+										"y": -1100
 									},
 									"zoom": 1
 								},
@@ -357,7 +357,7 @@
 					"panelTypes": ["network", "viewer", "params"],
 					"currentPanelIndex": 2,
 					"panel_data": {
-						"active_folder": 42,
+						"active_folder": 555,
 						"linkIndex": 1
 					}
 				},
@@ -378,10 +378,10 @@
 			"panel_data": {
 				"camera": {
 					"position": {
-						"x": 216.05176613453028,
-						"y": 179.71474920950294
+						"x": -111.58787474500235,
+						"y": -638.9658639975175
 					},
-					"zoom": 0.7748654775117202
+					"zoom": 0.9565938000000012
 				},
 				"history": {
 					"2": {
@@ -393,10 +393,10 @@
 					},
 					"36": {
 						"position": {
-							"x": -321.14279182473933,
-							"y": -1074.6204827555075
+							"x": -111.58787474500235,
+							"y": -638.9658639975175
 						},
-						"zoom": 0.6276211921800006
+						"zoom": 0.9565938000000012
 					},
 					"47": {
 						"position": {
@@ -547,10 +547,10 @@
 					},
 					"500": {
 						"position": {
-							"x": 1656.89270903425,
-							"y": 490.5155378572821
+							"x": 1295.933379505525,
+							"y": 312.2918274863796
 						},
-						"zoom": 0.6266935707372525
+						"zoom": 0.7736957663422871
 					},
 					"502": {
 						"position": {
@@ -575,10 +575,10 @@
 					},
 					"552": {
 						"position": {
-							"x": -127.58165161570884,
-							"y": -724.5853058473938
+							"x": 144.3173308535846,
+							"y": -402.70169781158603
 						},
-						"zoom": 1.0628820000000017
+						"zoom": 0.7748409780000021
 					},
 					"563": {
 						"position": {
@@ -713,17 +713,10 @@
 		},
 		"split_mode": "horizontal"
 	},
-	"currentNodes": ["/", "/", "/", "/", "/", "/", "/", "/"],
+	"currentNodes": ["/particles1", "/", "/", "/", "/", "/", "/", "/"],
 	"navigationHistory": {
 		"nodePaths": {
 			"1": [
-				"/particles1",
-				"/particles1/particlesSystemGpu1",
-				"/particles1",
-				"/",
-				"/particles1",
-				"/particles1/particlesSystemGpu1",
-				"/particles1",
 				"/particles1/MAT",
 				"/particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES",
 				"/particles1/MAT",
@@ -736,7 +729,14 @@
 				"/particles1",
 				"/",
 				"/particles1",
-				"/"
+				"/",
+				"/particles1",
+				"/particles1/actor4",
+				"/particles1",
+				"/particles1/MAT",
+				"/particles1/MAT/meshBasicBuilder_INSTANCES_PARTICLES",
+				"/particles1/MAT",
+				"/particles1"
 			],
 			"2": ["/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/"],
 			"3": ["/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/", "/"],

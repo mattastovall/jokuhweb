@@ -36,7 +36,7 @@
 		"scatter2": {
 			"type": "scatter",
 			"params": {
-				"pointsCount": 54000,
+				"pointsCount": 59000,
 				"attributesToTransfer": "P"
 			},
 			"inputs": ["copy1"]

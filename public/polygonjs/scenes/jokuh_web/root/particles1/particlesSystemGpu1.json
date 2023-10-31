@@ -2039,7 +2039,7 @@
 				"cook": false,
 				"dependentOnFoundNode": true
 			},
-			"raw_input": [0.6705303781713657, 0.3563207807188328, 0],
+			"raw_input": [0.45471099725011616, 0.23257700761955205, 0],
 			"overriden_options": {
 				"callback": "{}"
 			}
@@ -2221,7 +2221,7 @@
 				},
 				"v_POLY_param_cursor": {
 					"type": "v3",
-					"value": [0.6705303781713657, 0.3563207807188328, 0]
+					"value": [0.45471099725011616, 0.23257700761955205, 0]
 				},
 				"v_POLY_param_velocity": {
 					"type": "v3",
